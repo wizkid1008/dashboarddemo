@@ -128,8 +128,8 @@ if (typeof ChartDataLabels !== 'undefined') {
 // ─── COLOUR PALETTE ────────────────────────────────────────────
 // Starts with known countries as fallback; updated to live DB list on dd:ready
 let C = ['Ghana','Malawi','Tanzania','Zambia','Zimbabwe'];
-const MAP_LEVEL_COLORS = ['#e7e0f0', '#c9bbdd', '#b78f2f', '#b5533d', '#6b22aa'];
-const MAP_AREA_FILL = 'rgba(107,34,170,0.10)';
+const MAP_LEVEL_COLORS = ['#DCECCF', '#8FCB62', '#D9A441', '#D8752C', '#0D4F6C'];
+const MAP_AREA_FILL = 'rgba(111,166,65,0.14)';
 const CC = {
   Ghana:   MAP_LEVEL_COLORS[4],
   Malawi:  MAP_LEVEL_COLORS[0],
@@ -402,7 +402,7 @@ function donut(id, labels, data, colors) {
     type:'doughnut',
     data:{
       labels,
-      datasets:[{data,backgroundColor:colors,borderColor:'#f5f0e3',borderWidth:3}]
+      datasets:[{data,backgroundColor:colors,borderColor:'#F4F8F0',borderWidth:3}]
     },
     options:{
       responsive:true,
@@ -1967,7 +1967,7 @@ function ddRenderChart(canvasId, type, metricLabel) {
       type: 'doughnut',
       data: {
         labels: ['Primary', 'Secondary', 'Tertiary', 'Other'],
-        datasets: [{ data: [Math.round(total*0.40), Math.round(total*0.32), Math.round(total*0.17), Math.round(total*0.11)], backgroundColor: [MAP_LEVEL_COLORS[2],MAP_LEVEL_COLORS[4],MAP_LEVEL_COLORS[3],MAP_LEVEL_COLORS[1]], borderColor: '#f5f0e3', borderWidth: 3 }]
+        datasets: [{ data: [Math.round(total*0.40), Math.round(total*0.32), Math.round(total*0.17), Math.round(total*0.11)], backgroundColor: [MAP_LEVEL_COLORS[2],MAP_LEVEL_COLORS[4],MAP_LEVEL_COLORS[3],MAP_LEVEL_COLORS[1]], borderColor: '#F4F8F0', borderWidth: 3 }]
       },
       options: { responsive: true, maintainAspectRatio: false, cutout: '58%', plugins: { legend: { position: 'right', labels: { color: tickC, font: { size: 10 }, usePointStyle: true, pointStyle: 'circle' } } } }
     });
@@ -2101,7 +2101,7 @@ function makeDDMultiDrop(wrapperId, placeholder, onChange) {
   wrap.innerHTML = `
     <button type="button" class="country-multi-trigger" id="${wrapperId}-trigger">
       <span id="${wrapperId}-label">Select ${placeholder}</span>
-      <svg width="11" height="7" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="#4B2E83" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg width="11" height="7" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="#0D4F6C" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
     <div class="country-multi-dropdown" id="${wrapperId}-dropdown" hidden></div>`;
 
@@ -2575,7 +2575,7 @@ function slRenderOneChart(canvasId, type, rows, years, kpi) {
     const data = entities.map(e => rows.filter(r => r[dim] === e).reduce((s, r) => s + r.value, 0));
     slCharts[canvasId] = new Chart(canvas, {
       type: 'doughnut',
-      data: { labels: entities, datasets: [{ data, backgroundColor: BARS, borderColor: '#f5f0e3', borderWidth: 3 }] },
+      data: { labels: entities, datasets: [{ data, backgroundColor: BARS, borderColor: '#F4F8F0', borderWidth: 3 }] },
       options: {
         responsive: true, maintainAspectRatio: false, cutout: '55%',
         plugins: { legend: { position: 'right', labels: { color: tickC, font: { size: 10 }, usePointStyle: true, pointStyle: 'circle' } } }

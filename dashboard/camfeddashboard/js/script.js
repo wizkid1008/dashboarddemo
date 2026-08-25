@@ -129,15 +129,15 @@ if (typeof ChartDataLabels !== 'undefined') {
 // Starts with known countries as fallback; updated to live DB list on dd:ready
 let C = ['Ghana','Malawi','Tanzania','Zambia','Zimbabwe'];
 const CC = {
-  Ghana:   '#e0d8f0',
-  Malawi:  '#b4a8cc',
-  Tanzania:'#9a8838',
-  Zambia:  '#aa5545',
-  Zimbabwe:'#5830a0',
-  All:     '#b4a8cc'
+  Ghana:   '#DCECCF',
+  Malawi:  '#8FCB62',
+  Tanzania:'#D9A441',
+  Zambia:  '#D8752C',
+  Zimbabwe:'#0D4F6C',
+  All:     '#8FCB62'
 };
 // For bar charts always use these
-const BARS = ['#e0d8f0','#b4a8cc','#9a8838','#aa5545','#5830a0','#c8c0e8','#786820','#8a3530','#3e2070','#d4c8e8'];
+const BARS = ['#DCECCF','#8FCB62','#D9A441','#D8752C','#0D4F6C','#BFDFA8','#8E8A2C','#B8572D','#083A50','#EAF4E3'];
 
 function countryColor(name) {
   if (CC[name]) return CC[name];
@@ -241,7 +241,7 @@ const L2AF = {
 };
 
 // ─── LEVEL 3 STATIC DATA ──────────────────────────────────────
-const L3_GREEN = '#9a8838';
+const L3_GREEN = '#D9A441';
 
 const L3 = {
   // MoU counts per country (Ed Systems 2)
@@ -408,7 +408,7 @@ function donut(id, labels, data, colors) {
     type:'doughnut',
     data:{
       labels,
-      datasets:[{data,backgroundColor:colors,borderColor:'#f5f0e3',borderWidth:3}]
+      datasets:[{data,backgroundColor:colors,borderColor:'#F4F8F0',borderWidth:3}]
     },
     options:{
       responsive:true,
@@ -436,7 +436,7 @@ function progList(id, items, max, colorFn) {
         <span class="prog-val">${it.display||fmt(it.val)}</span>
       </div>
       <div class="prog-bg">
-        <div class="prog-fill" style="width:${(it.val/m*100).toFixed(1)}%;background:${colorFn?colorFn(it.label):'#5830a0'}"></div>
+        <div class="prog-fill" style="width:${(it.val/m*100).toFixed(1)}%;background:${colorFn?colorFn(it.label):'#0D4F6C'}"></div>
       </div>
     </div>`).join('');
 }
@@ -602,7 +602,7 @@ function resolveKpiValue(stat) {
 }
 
 // ─── EDUCATION REACH CHART VIEW ───────────────────────────────
-const ER_COLORS = ['#e0d8f0','#b4a8cc','#9a8838','#aa5545','#5830a0'];
+const ER_COLORS = ['#DCECCF','#8FCB62','#D9A441','#D8752C','#0D4F6C'];
 
 function erBar(id, labels, datasets, opts = {}) {
   destroyChart(id);
@@ -721,8 +721,8 @@ function renderEducationReachCharts() {
 
     // 2. CAMA & Community — grouped bar
     erBar('er-cama-chart', a, [
-      { label: 'CAMA',      data: camaVals, backgroundColor: '#5830a0' },
-      { label: 'Community', data: commVals, backgroundColor: '#9a8838' }
+      { label: 'CAMA',      data: camaVals, backgroundColor: '#0D4F6C' },
+      { label: 'Community', data: commVals, backgroundColor: '#D9A441' }
     ], { legend: true });
 
     // 3. Total Girls — horizontal bar, one colour per country
@@ -903,13 +903,13 @@ function renderLearnerGuideProgrammeCharts() {
   setTimeout(() => {
     // 1. CAMFED Trained — gold vertical bars
     erBar('lg-training-chart', a,
-      [{ label: 'CAMFED Trained', data: lgVals, backgroundColor: '#9a8838' }],
+      [{ label: 'CAMFED Trained', data: lgVals, backgroundColor: '#D9A441' }],
       { legend: true });
 
     // 2. Girls (deep purple-black) / Boys (dark red) grouped bar
     erBar('lg-sls-chart', a, [
-      { label: 'Girls', data: girlsVals, backgroundColor: '#5830a0' },
-      { label: 'Boys',  data: boysVals,  backgroundColor: '#aa5545' }
+      { label: 'Girls', data: girlsVals, backgroundColor: '#0D4F6C' },
+      { label: 'Boys',  data: boysVals,  backgroundColor: '#D8752C' }
     ], { legend: true });
 
     // MBW radio toggle
@@ -971,13 +971,13 @@ function renderEducationSystems1Charts() {
   setTimeout(() => {
     erBar('l3es1-dist-chart', a, [
       { label: 'CAMFED Partner', data: camfedDist, backgroundColor: L3_GREEN },
-      { label: 'Government',     data: govtDist,   backgroundColor: '#5830a0' }
+      { label: 'Government',     data: govtDist,   backgroundColor: '#0D4F6C' }
     ], { legend: true, stacked: true, stackLabels: true });
 
     erBar('l3es1-schools-chart',
       ['CAMFED Supported', 'Government Delivery'],
       [{ data: [L3.schoolsCamfed, L3.schoolsGovt],
-         backgroundColor: [L3_GREEN, '#5830a0'] }]
+         backgroundColor: [L3_GREEN, '#0D4F6C'] }]
     );
   }, 0);
 
@@ -1025,10 +1025,10 @@ function renderEducationSystems2Charts() {
     return `
       <div class="l3-section-title">By Gender</div>
       ${barRow('Girls total',     gT, genderTotal, L3_GREEN)}
-      ${barRow('Boys total',      bT, genderTotal, '#aa5545')}
+      ${barRow('Boys total',      bT, genderTotal, '#D8752C')}
       <div class="l3-section-title">By School Level</div>
       ${barRow('Primary total',   pT, schoolTotal, L3_GREEN)}
-      ${barRow('Secondary total', sT, schoolTotal, '#aa5545')}`;
+      ${barRow('Secondary total', sT, schoolTotal, '#D8752C')}`;
   }
 
   section.innerHTML = `
@@ -1065,9 +1065,9 @@ function renderEducationSystems2Charts() {
       { horizontal: true });
 
     erBar('l3es2-champ-chart', ['Members'], [
-      { label: 'CDCs', data: [L3.champions.cdcs], backgroundColor: '#5830a0' },
+      { label: 'CDCs', data: [L3.champions.cdcs], backgroundColor: '#0D4F6C' },
       { label: 'PSGs', data: [L3.champions.psgs], backgroundColor: L3_GREEN },
-      { label: 'SBCs', data: [L3.champions.sbcs], backgroundColor: '#aa5545' }
+      { label: 'SBCs', data: [L3.champions.sbcs], backgroundColor: '#D8752C' }
     ], { legend: true });
 
     section.querySelectorAll('input[name="l3es2-kids"]').forEach(r => {
@@ -1295,14 +1295,14 @@ function renderLivelihoodsReachCharts() {
   setTimeout(() => {
     // 1. Enterprise Guides: Agriculture (dark) / Business (steel blue) grouped
     erBar('l2lr-eg-chart', a, [
-      { label: 'Agriculture Guides', data: agVals,  backgroundColor: '#5830a0' },
-      { label: 'Business Guides',    data: bizVals, backgroundColor: '#b4a8cc' }
+      { label: 'Agriculture Guides', data: agVals,  backgroundColor: '#0D4F6C' },
+      { label: 'Business Guides',    data: bizVals, backgroundColor: '#8FCB62' }
     ], { legend: true });
 
     // 2. Businesses Supported: same colour pairing
     erBar('l2lr-bs-chart', a, [
-      { label: 'Agriculture Guides', data: bsAgVals,  backgroundColor: '#5830a0' },
-      { label: 'Business Guides',    data: bsBizVals, backgroundColor: '#b4a8cc' }
+      { label: 'Agriculture Guides', data: bsAgVals,  backgroundColor: '#0D4F6C' },
+      { label: 'Business Guides',    data: bsBizVals, backgroundColor: '#8FCB62' }
     ], { legend: true });
 
     // 3. Business Grants: per-country colours, radio switches dataset
@@ -1320,8 +1320,8 @@ function renderLivelihoodsReachCharts() {
 
     // 4. Kiva (steel blue) / RIF (dark) grouped
     erBar('l2lr-loans-chart', a, [
-      { label: 'CAMFED Kiva Loans', data: kivaVals, backgroundColor: '#b4a8cc' },
-      { label: 'CAMFED RIF Loans',  data: rifVals,  backgroundColor: '#5830a0' }
+      { label: 'CAMFED Kiva Loans', data: kivaVals, backgroundColor: '#8FCB62' },
+      { label: 'CAMFED RIF Loans',  data: rifVals,  backgroundColor: '#0D4F6C' }
     ], { legend: true });
   }, 0);
 
@@ -1549,7 +1549,7 @@ function buildL1() {
     const cum2030 = ddQ(BUR, [c], 2020, 2030);
     const cumAll  = ddQ(BUR, [c], 2020, sel.dateEnd);
     bar('l1-bursary-chart', ['Annual','Newly Supp.','Cum. 20–30','Cum. All-time'],
-      [{data:[annual, newly, cum2030, cumAll], backgroundColor:['#e0d8f0','#b4a8cc','#9a8838','#aa5545']}]);
+      [{data:[annual, newly, cum2030, cumAll], backgroundColor:['#DCECCF','#8FCB62','#D9A441','#D8752C']}]);
   } else {
     bar('l1-bursary-chart', a, [{data:a.map(n=>ddQC(BUR,n)), backgroundColor:BARS}]);
   }
@@ -1561,19 +1561,19 @@ function buildL1() {
     bar('l1-lg-chart', ['CAMFED Trained','Govt Trained'], [{
       data:[ddSplit(lgTotal, D.kpi19.camfed[c]||0, dTotal),
             ddSplit(lgTotal, D.kpi19.govt[c]||0,   dTotal)],
-      backgroundColor:['#5830a0','#9a8838']
+      backgroundColor:['#0D4F6C','#D9A441']
     }]);
   } else {
     bar('l1-lg-chart', a, [
-      {label:'CAMFED', data:a.map(n=>{ const t=ddQC(LG,n), d=(D.kpi19.camfed[n]||0)+(D.kpi19.govt[n]||0)||1; return ddSplit(t,D.kpi19.camfed[n]||0,d); }), backgroundColor:'#5830a0'},
-      {label:'Govt',   data:a.map(n=>{ const t=ddQC(LG,n), d=(D.kpi19.camfed[n]||0)+(D.kpi19.govt[n]||0)||1; return ddSplit(t,D.kpi19.govt[n]||0,d);   }), backgroundColor:'#9a8838'}
+      {label:'CAMFED', data:a.map(n=>{ const t=ddQC(LG,n), d=(D.kpi19.camfed[n]||0)+(D.kpi19.govt[n]||0)||1; return ddSplit(t,D.kpi19.camfed[n]||0,d); }), backgroundColor:'#0D4F6C'},
+      {label:'Govt',   data:a.map(n=>{ const t=ddQC(LG,n), d=(D.kpi19.camfed[n]||0)+(D.kpi19.govt[n]||0)||1; return ddSplit(t,D.kpi19.govt[n]||0,d);   }), backgroundColor:'#D9A441'}
     ], {stacked:true, legend:true});
   }
 
   // Primary vs secondary — scale DD total using D ratios
   bar('l1-levels-chart', a, [
-    {label:'Primary',   data:a.map(n=>{ const t=ddQC(BUR,n), d=D.kpi11.annual.total[n]||1; return ddSplit(t,D.kpi11.annual.primary[n]||0,d); }),   backgroundColor:'#5830a0'},
-    {label:'Secondary', data:a.map(n=>{ const t=ddQC(BUR,n), d=D.kpi11.annual.total[n]||1; return ddSplit(t,D.kpi11.annual.secondary[n]||0,d); }), backgroundColor:'#9a8838'}
+    {label:'Primary',   data:a.map(n=>{ const t=ddQC(BUR,n), d=D.kpi11.annual.total[n]||1; return ddSplit(t,D.kpi11.annual.primary[n]||0,d); }),   backgroundColor:'#0D4F6C'},
+    {label:'Secondary', data:a.map(n=>{ const t=ddQC(BUR,n), d=D.kpi11.annual.total[n]||1; return ddSplit(t,D.kpi11.annual.secondary[n]||0,d); }), backgroundColor:'#D9A441'}
   ], {stacked:false, legend:true});
 
   // Periods bar — aggregate across active countries from DD
@@ -1584,7 +1584,7 @@ function buildL1() {
       ddQ(BUR, a, 2020, 2030),
       ddQ(BUR, a, 2020, sel.dateEnd)
     ],
-    backgroundColor:['#5830a0','#b4a8cc','#9a8838','#aa5545']
+    backgroundColor:['#0D4F6C','#8FCB62','#D9A441','#D8752C']
   }]);
 
   // Dropout rate — no DD equivalent; keep D values
@@ -1593,11 +1593,11 @@ function buildL1() {
 
   // SLS — direct from gender column
   if (single) {
-    bar('l1-sls-chart', ['Girls','Boys'], [{data:[ddQC('Number of Clients by Form — Girls',c), ddQC('Number of Clients by Form — Boys',c)], backgroundColor:['#9a8838','#5830a0']}]);
+    bar('l1-sls-chart', ['Girls','Boys'], [{data:[ddQC('Number of Clients by Form — Girls',c), ddQC('Number of Clients by Form — Boys',c)], backgroundColor:['#D9A441','#0D4F6C']}]);
   } else {
     bar('l1-sls-chart', a, [
-      {label:'Girls', data:a.map(n=>ddQC('Number of Clients by Form — Girls',n)), backgroundColor:'#9a8838'},
-      {label:'Boys',  data:a.map(n=>ddQC('Number of Clients by Form — Boys', n)), backgroundColor:'#5830a0'}
+      {label:'Girls', data:a.map(n=>ddQC('Number of Clients by Form — Girls',n)), backgroundColor:'#D9A441'},
+      {label:'Boys',  data:a.map(n=>ddQC('Number of Clients by Form — Boys', n)), backgroundColor:'#0D4F6C'}
     ], {stacked:true, legend:true});
   }
 
@@ -1608,7 +1608,7 @@ function buildL1() {
     const val = vals.reduce((s,v)=>s+v,0) / vals.length;
     return {label:f, val:parseFloat(val.toFixed(2)), display:val.toFixed(2)+'%'};
   });
-  progList('l1-dropout-form', formItems, 25, ()=>'#b4a8cc');
+  progList('l1-dropout-form', formItems, 25, ()=>'#8FCB62');
 }
 
 // ─── BUILD LEVEL 2 ─────────────────────────────────────────────
@@ -1620,15 +1620,15 @@ function buildL2() {
 
   // Guide types — live by type
   bar('l2-guides-chart', a, [
-    {label:'Transition',  data:a.map(n=>ddQC('Active Guides — Transition',  n)), backgroundColor:'#e0d8f0'},
-    {label:'Agriculture', data:a.map(n=>ddQC('Active Guides — Agriculture', n)), backgroundColor:'#5830a0'},
-    {label:'Business',    data:a.map(n=>ddQC('Active Guides — Business',    n)), backgroundColor:'#9a8838'}
+    {label:'Transition',  data:a.map(n=>ddQC('Active Guides — Transition',  n)), backgroundColor:'#DCECCF'},
+    {label:'Agriculture', data:a.map(n=>ddQC('Active Guides — Agriculture', n)), backgroundColor:'#0D4F6C'},
+    {label:'Business',    data:a.map(n=>ddQC('Active Guides — Business',    n)), backgroundColor:'#D9A441'}
   ], {legend:true});
 
   // Businesses supported — live loan counts by guide type
   bar('l2-biz-chart', a, [
-    {label:'Ag. Guides',  data:a.map(n=>ddQC('Loans Disbursed — Agriculture', n)), backgroundColor:'#5830a0'},
-    {label:'Biz. Guides', data:a.map(n=>ddQC('Loans Disbursed — Business',    n)), backgroundColor:'#9a8838'}
+    {label:'Ag. Guides',  data:a.map(n=>ddQC('Loans Disbursed — Agriculture', n)), backgroundColor:'#0D4F6C'},
+    {label:'Biz. Guides', data:a.map(n=>ddQC('Loans Disbursed — Business',    n)), backgroundColor:'#D9A441'}
   ], {legend:true});
 
   // Post-school clients — DD
@@ -1649,14 +1649,14 @@ function buildL3() {
 
   // Partner schools — DD total split by D primary/secondary ratios
   bar('l3-schools-chart', a, [
-    {label:'Primary',   data:a.map(n=>{ const t=ddQC('Active Partner Schools',n), d=D.kpi31.total_all[n]||1; return ddSplit(t,D.kpi31.primary[n]||0,d);   }), backgroundColor:'#5830a0'},
-    {label:'Secondary', data:a.map(n=>{ const t=ddQC('Active Partner Schools',n), d=D.kpi31.total_all[n]||1; return ddSplit(t,D.kpi31.secondary[n]||0,d); }), backgroundColor:'#9a8838'}
+    {label:'Primary',   data:a.map(n=>{ const t=ddQC('Active Partner Schools',n), d=D.kpi31.total_all[n]||1; return ddSplit(t,D.kpi31.primary[n]||0,d);   }), backgroundColor:'#0D4F6C'},
+    {label:'Secondary', data:a.map(n=>{ const t=ddQC('Active Partner Schools',n), d=D.kpi31.total_all[n]||1; return ddSplit(t,D.kpi31.secondary[n]||0,d); }), backgroundColor:'#D9A441'}
   ], {stacked:true, legend:true});
 
   // Grants — DD total split by D primary/secondary ratios
   bar('l3-children-chart', a, [
-    {label:'Primary',   data:a.map(n=>{ const t=ddQC('Grants Disbursed',n), d=D.kpi35.total[n]||1; return ddSplit(t,D.kpi35.primary[n]||0,d);   }), backgroundColor:'#5830a0'},
-    {label:'Secondary', data:a.map(n=>{ const t=ddQC('Grants Disbursed',n), d=D.kpi35.total[n]||1; return ddSplit(t,D.kpi35.secondary[n]||0,d); }), backgroundColor:'#9a8838'}
+    {label:'Primary',   data:a.map(n=>{ const t=ddQC('Grants Disbursed',n), d=D.kpi35.total[n]||1; return ddSplit(t,D.kpi35.primary[n]||0,d);   }), backgroundColor:'#0D4F6C'},
+    {label:'Secondary', data:a.map(n=>{ const t=ddQC('Grants Disbursed',n), d=D.kpi35.total[n]||1; return ddSplit(t,D.kpi35.secondary[n]||0,d); }), backgroundColor:'#D9A441'}
   ], {stacked:true, legend:true});
 
   // Districts — live count from DD geography
@@ -1664,8 +1664,8 @@ function buildL3() {
 
   // P1 girls/boys — no DD gender breakdown; keep D values
   bar('l3-p1-chart', a, [
-    {label:'Girls', data:a.map(n=>D.p1.girls[n]||0), backgroundColor:'#9a8838'},
-    {label:'Boys',  data:a.map(n=>D.p1.boys[n]||0),  backgroundColor:'#5830a0'}
+    {label:'Girls', data:a.map(n=>D.p1.girls[n]||0), backgroundColor:'#D9A441'},
+    {label:'Boys',  data:a.map(n=>D.p1.boys[n]||0),  backgroundColor:'#0D4F6C'}
   ], {stacked:true, legend:true});
 }
 
@@ -1971,7 +1971,7 @@ function ddRenderChart(canvasId, type, metricLabel) {
       type: 'doughnut',
       data: {
         labels: ['Primary', 'Secondary', 'Tertiary', 'Other'],
-        datasets: [{ data: [Math.round(total*0.40), Math.round(total*0.32), Math.round(total*0.17), Math.round(total*0.11)], backgroundColor: ['#9a8838','#5830a0','#b4a8cc','#e0d8f0'], borderColor: '#f5f0e3', borderWidth: 3 }]
+        datasets: [{ data: [Math.round(total*0.40), Math.round(total*0.32), Math.round(total*0.17), Math.round(total*0.11)], backgroundColor: ['#D9A441','#0D4F6C','#8FCB62','#DCECCF'], borderColor: '#F4F8F0', borderWidth: 3 }]
       },
       options: { responsive: true, maintainAspectRatio: false, cutout: '58%', plugins: { legend: { position: 'right', labels: { color: tickC, font: { size: 10 }, usePointStyle: true, pointStyle: 'circle' } } } }
     });
@@ -1981,7 +1981,7 @@ function ddRenderChart(canvasId, type, metricLabel) {
   if (type === 'vertical-bar') {
     ddCharts[canvasId] = new Chart(canvas, {
       type: 'bar',
-      data: { labels: years, datasets: [{ data: values, backgroundColor: '#9a8838', borderRadius: 4, borderSkipped: false }] },
+      data: { labels: years, datasets: [{ data: values, backgroundColor: '#D9A441', borderRadius: 4, borderSkipped: false }] },
       options: baseOpts
     });
     return;
@@ -1992,7 +1992,7 @@ function ddRenderChart(canvasId, type, metricLabel) {
     type: 'line',
     data: {
       labels: years,
-      datasets: [{ data: values, borderColor: '#9a8838', backgroundColor: 'rgba(154,136,56,0.1)', tension: 0.4, fill: true }]
+      datasets: [{ data: values, borderColor: '#D9A441', backgroundColor: 'rgba(111,166,65,0.14)', tension: 0.4, fill: true }]
     },
     options: baseOpts
   });
@@ -2105,7 +2105,7 @@ function makeDDMultiDrop(wrapperId, placeholder, onChange) {
   wrap.innerHTML = `
     <button type="button" class="country-multi-trigger" id="${wrapperId}-trigger">
       <span id="${wrapperId}-label">Select ${placeholder}</span>
-      <svg width="11" height="7" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="#4B2E83" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg width="11" height="7" viewBox="0 0 12 8" fill="none" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="#0D4F6C" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
     <div class="country-multi-dropdown" id="${wrapperId}-dropdown" hidden></div>`;
 
@@ -2503,7 +2503,7 @@ function slRenderOneChart(canvasId, type, rows, years) {
     const data = years.map(yr => rows.filter(r => r.year === yr).reduce((s, r) => s + r.value, 0));
     slCharts[canvasId] = new Chart(canvas, {
       type: 'line',
-      data: { labels: years, datasets: [{ data, borderColor: '#9a8838', backgroundColor: 'rgba(154,136,56,0.1)', tension: 0.4, fill: true, pointRadius: 3 }] },
+      data: { labels: years, datasets: [{ data, borderColor: '#D9A441', backgroundColor: 'rgba(111,166,65,0.14)', tension: 0.4, fill: true, pointRadius: 3 }] },
       options: baseOpts
     });
     return;
@@ -2543,7 +2543,7 @@ function slRenderOneChart(canvasId, type, rows, years) {
     const data = entities.map(e => rows.filter(r => r[dim] === e).reduce((s, r) => s + r.value, 0));
     slCharts[canvasId] = new Chart(canvas, {
       type: 'doughnut',
-      data: { labels: entities, datasets: [{ data, backgroundColor: BARS, borderColor: '#f5f0e3', borderWidth: 3 }] },
+      data: { labels: entities, datasets: [{ data, backgroundColor: BARS, borderColor: '#F4F8F0', borderWidth: 3 }] },
       options: {
         responsive: true, maintainAspectRatio: false, cutout: '55%',
         plugins: { legend: { position: 'right', labels: { color: tickC, font: { size: 10 }, usePointStyle: true, pointStyle: 'circle' } } }

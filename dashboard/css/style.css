@@ -1,26 +1,27 @@
 /* ================================================================
-   CAMFED IMPACT DASHBOARD — Design System
-   Brand: Deep Purple #4B2E83 · Orange #C94C2C · Gold #E3A857
-   Background: Cream #F7F3EF · Cards: White
+   SHF AGRICULTURE DASHBOARD — Design System
+   Brand: Deep Blue #0D4F6C · Leaf Green #6FA641 · Harvest Gold #D9A441
+   Background: Soft Green #F4F8F0 · Cards: White
    ================================================================ */
 
 /* ── Variables ────────────────────────────────────────────────── */
 :root {
-  --cream:         #F7F3EF;
-  --cream-dark:    #EDE8E2;
-  --purple:        #4B2E83;
-  --purple-mid:    #6B47A0;
-  --purple-light:  #9B7EC8;
-  --purple-faint:  #F0EBF8;
-  --orange:        #C94C2C;
-  --orange-light:  #F2E0DA;
-  --gold:          #E3A857;
-  --gold-light:    #FAF0D7;
-  --text:          #2A2A2A;
-  --text-mid:      #5C5C6E;
-  --text-light:    #9A9AB0;
+  --cream:         #F4F8F0;
+  --cream-dark:    #E3EEDB;
+  --purple:        #0D4F6C;
+  --purple-mid:    #1E7896;
+  --purple-light:  #6FA641;
+  --purple-faint:  #EAF4E3;
+  --orange:        #D8752C;
+  --orange-light:  #F6E4D5;
+  --gold:          #D9A441;
+  --gold-light:    #F7EBC8;
+  --accent-dark:   #0D4F6C;
+  --text:          #243238;
+  --text-mid:      #5D6D64;
+  --text-light:    #91A095;
   --white:         #FFFFFF;
-  --border:        rgba(75,46,131,0.10);
+  --border:        rgba(13,79,108,0.12);
   --shadow-sm:     0 1px 4px rgba(0,0,0,0.06);
   --shadow:        0 2px 12px rgba(0,0,0,0.08);
   --shadow-md:     0 4px 24px rgba(0,0,0,0.10);
@@ -509,7 +510,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   transition: background 0.15s, transform 0.1s;
   white-space: nowrap;
 }
-.apply-filters-btn:hover { background: #b0401f; }
+.apply-filters-btn:hover { background: #B85D20; }
 .apply-filters-btn:active { transform: scale(0.97); }
 
 /* ── Dropdowns ── */
@@ -723,8 +724,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   height: 36px;
   place-items: center;
   color: var(--accent-dark);
-  background: #f2ecfb;
-  border: 1px solid #e0d6ee;
+  background: #EAF4E3;
+  border: 1px solid #D4E6C7;
   border-radius: 999px;
   cursor: pointer;
 }
@@ -1111,7 +1112,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-shrink: 0;
   transition: background 0.15s;
 }
-.current-data-btn:hover { background: #c98d2e; }
+.current-data-btn:hover { background: #B9862F; }
 
 /* ================================================================
    CHART CONTAINERS
@@ -1625,7 +1626,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .dd-year-badge.single {
   background: var(--gold-light);
-  color: #7a5c10;
+  color: #73551B;
 }
 .dd-number-display {
   font-family: 'Merriweather', serif;
