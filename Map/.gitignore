@@ -1,0 +1,12 @@
+# Large boundary datasets should not be committed to normal GitHub repos.
+# Use Supabase/PostGIS, Git LFS, cloud storage, or a release asset for these.
+*.geojson
+*.json.zip
+gadm41_ZMB_1.json/
+gadm41_ZMB_2.json/
+
+# Local runtime/editor files
+node_modules/
+.env
+.DS_Store
+Thumbs.db
