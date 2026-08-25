@@ -4,7 +4,20 @@ const path = require("node:path");
 const rootDir = path.resolve(__dirname, "..");
 const sourceDir = path.join(rootDir, "dashboard");
 const outputDir = path.join(rootDir, "dist");
-const excludedNames = new Set([".gitignore", "backend", "README.md"]);
+const excludedNames = new Set([
+  ".gitignore",
+  "backend",
+  "README.md",
+  "camfed-classroom.jpg",
+  "camfed-classroom.jpg.jpg",
+  "camfed-logo.png",
+  "camfed-mentor-student.jpg",
+  "camfed-mentor-student.jpg.jpg",
+  "camfed-students-running.jpg",
+  "camfed-students-running.jpg.jpg",
+  "girls-on-bikes.jpg",
+  "New Project.jpg"
+]);
 
 function copyStaticFiles(source, target) {
   fs.mkdirSync(target, { recursive: true });

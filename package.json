@@ -2,7 +2,7 @@
   "name": "dashboarddemo",
   "version": "1.0.0",
   "private": true,
-  "description": "Static CAMFED dashboard demo for Cloudflare Pages",
+  "description": "Static SHF Agriculture dashboard demo for Cloudflare Pages",
   "scripts": {
     "build": "node scripts/build-static.js"
   },

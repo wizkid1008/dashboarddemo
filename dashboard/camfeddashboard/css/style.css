@@ -83,7 +83,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-shrink: 0;
 }
 .sidebar-logo-img {
-  height: 44px;
+  max-height: 56px;
+  max-width: 100%;
   width: auto;
   display: block;
 }

@@ -1708,7 +1708,7 @@ document.getElementById('home-btn').addEventListener('click', () => {
   // Reset hero title and sidebar active state
   const heroTitle = document.getElementById('hero-title');
   const heroDesc  = document.getElementById('hero-desc');
-  if (heroTitle) heroTitle.textContent = 'CAMFED Impact Dashboard';
+  if (heroTitle) heroTitle.textContent = 'SHF Agriculture Impact Dashboard';
   if (heroDesc)  heroDesc.textContent  = 'Select a level from the filters below to explore programme data by country, year, and sublevel.';
   document.querySelectorAll('.sidebar-nav-item').forEach(i => i.classList.remove('sidebar-nav-item--active'));
 });
@@ -1729,21 +1729,21 @@ document.getElementById('level-select').addEventListener('change', e=>{
   const levelMeta = {
     level1: {
       title: "Girls' Education Impact Dashboard",
-      desc:  "Track key progress indicators that reflect CAMFED's work in girls' bursary support, learner guides and community-based education across the continent.",
-      img:   "images/camfed-mentor-student.jpg",
-      imgPos: "center 15%"
+      desc:  "Track key progress indicators that reflect SHF Agriculture's work in producer education, field support and community-based development across the continent.",
+      img:   "images/shf-rice-terraces.jpg",
+      imgPos: "center 45%"
     },
     level2: {
       title: "Livelihoods & Leadership Impact Dashboard",
-      desc:  "Track key progress indicators that reflect CAMFED's work in economic empowerment, leadership development and systems strengthening across the continent.",
-      img:   "images/camfed-students-running.jpg",
-      imgPos: "center 10%"
+      desc:  "Track key progress indicators that reflect SHF Agriculture's work in economic empowerment, leadership development and systems strengthening across the continent.",
+      img:   "images/shf-maize-field.jpg",
+      imgPos: "center 45%"
     },
     level3: {
       title: "Education Reach Impact Dashboard",
-      desc:  "Track key progress indicators that reflect CAMFED's reach in classroom support, teacher training and learning outcomes across the continent.",
-      img:   "images/camfed-classroom.jpg",
-      imgPos: "center 60%"
+      desc:  "Track key progress indicators that reflect SHF Agriculture's reach in training support, partner development and learning outcomes across the continent.",
+      img:   "images/shf-coffee-harvest.jpg",
+      imgPos: "center 45%"
     }
   };
   const meta = levelMeta[value];
