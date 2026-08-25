@@ -339,11 +339,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-direction: column;
   justify-content: center;
   z-index: 1;
-  background-image: radial-gradient(circle, rgba(58,26,95,0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(13,79,108,0.06) 1px, transparent 1px);
   background-size: 14px 14px;
 }
 .content-header-img-wrap {
   width: 44%;
+  min-height: 200px;
   flex-shrink: 0;
   clip-path: url(#hero-img-clip);
   overflow: hidden;
@@ -353,6 +354,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
 }
 .content-header .hero-title {
@@ -643,53 +645,46 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex: 1;
 }
 .date-display {
-  font-size: 0.86rem;
+  min-width: 72px;
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--purple);
   text-align: center;
   letter-spacing: 0.03em;
 }
 .date-sliders-wrapper {
-  position: relative;
-  height: 20px;
-  flex: 1;
-  min-width: 80px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+.date-year-input {
+  width: 64px;
+  min-height: 32px;
+  padding: 5px 7px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--purple);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-align: center;
+}
+.date-year-input:focus {
+  outline: none;
+  border-color: var(--purple-light);
+  box-shadow: 0 0 0 3px rgba(111,166,65,0.16);
+}
+.date-year-separator {
+  color: var(--text-light);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 .date-slider {
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  appearance: none;
-  background: transparent;
-  pointer-events: none;
-  top: 50%;
-  transform: translateY(-50%);
+  display: none;
 }
-.date-slider::-webkit-slider-runnable-track {
-  height: 4px;
-  border-radius: 2px;
-  background: var(--cream-dark);
-}
-.date-slider::-webkit-slider-thumb {
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--purple);
-  border: 2px solid white;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
-  pointer-events: all;
-  cursor: pointer;
-  margin-top: -6px;
-}
-.date-slider::-moz-range-thumb {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--purple);
-  border: 2px solid white;
-  pointer-events: all;
-  cursor: pointer;
 }
 
 /* ================================================================
@@ -787,6 +782,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .landing-hero-img-wrap {
   width: 44%;
+  min-height: 230px;
   flex-shrink: 0;
   clip-path: url(#hero-img-clip);
   overflow: hidden;
@@ -795,7 +791,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center center;
   display: block;
 }
 

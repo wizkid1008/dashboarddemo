@@ -44,7 +44,7 @@ const hierarchyData = [
       { label: "Active Transition Guides",                                kpi: "kpi22.transition" },
       { label: "Numbers of CAMA Members",                                 kpi: "kpi21.cum" },
       { label: "Young Women Supported by Transition Guide",               kpi: "kpi213.num" },
-      { label: "Young Women Supported by CAMFED Tertiary Education" },
+      { label: "Young Women Supported by SHF Agriculture Tertiary Education" },
       { label: "CAMA Members in Leadership Roles" }
     ]
   },
@@ -55,7 +55,7 @@ const hierarchyData = [
       { label: "Active Enerperis Guides (Business & Agriculture Guides)", kpiSum: ["kpi22.business", "kpi22.agriculture"] },
       { label: "Business Supported by Enterprise Guides",                 kpi: "kpi27.biz" },
       { label: "Business Grants Distributed" },
-      { label: "CAMFED KIVA and RIF Loans Distributed" }
+      { label: "SHF Agriculture KIVA and RIF Loans Distributed" }
     ]
   },
   {
@@ -63,7 +63,7 @@ const hierarchyData = [
     subLevel: "Jobs & Income",
     statistics: [
       { label: "Women Progresing Towards a secure livelihood" },
-      { label: "Females Entrepreeurs with increased incomes after participating in CAMFED's ENteprise Programs", kpi: "kpi210.pct", pct: true },
+      { label: "Females Entrepreeurs with increased incomes after participating in SHF Agriculture's ENteprise Programs", kpi: "kpi210.pct", pct: true },
       { label: "Jobs Created through Enterprise Programme including Self Employment",                            kpi: "kpi29.annual" },
       { label: "New Business" },
       { label: "Business Survival Rate",                                                                         kpi: "kpi212.yr1", pct: true }
@@ -73,7 +73,7 @@ const hierarchyData = [
     level: "LEVEL 2: Livelihoods & Leadership",
     subLevel: "Agriculture & Food",
     statistics: [
-      { label: "Percentage of Femal Entrepenuers Reporting and Increased Household Consumption fo Food Since Participating in CAMFED's Enteprise Program" },
+      { label: "Percentage of Femal Entrepenuers Reporting and Increased Household Consumption fo Food Since Participating in SHF Agriculture's Enteprise Program" },
       { label: "Percentage of FEmals Agripernuers Reporting Increased Yields Since Participating" },
       { label: "Average Number of Climate-Smart Techniques Used by Those Receiieng Support from an Agriculture Guide" }
     ]
@@ -103,11 +103,11 @@ const hierarchyData = [
     level: "LEVEL 3: Education Systems",
     subLevel: "Education Systems 2",
     statistics: [
-      { label: "Number of Memerando fo Understanding between Government and CAMFED" },
+      { label: "Number of Memerando fo Understanding between Government and SHF Agriculture" },
       { label: "Children Benefiting from Improved Learning Environment",                    kpi: "kpi35.total" },
       { label: "Number of Active Community Champions for Girl's Education" },
       { label: "National Level Dropout Rate for Girls due to Early Mariage of Pregnancy",  kpi: "kpi15.pct", pct: true },
-      { label: "Number of Memoranda of Understanding between Government Departmetns and CAMFED" }
+      { label: "Number of Memoranda of Understanding between Government Departmetns and SHF Agriculture" }
     ]
   }
 ];
@@ -210,7 +210,7 @@ const EO = {
 const L2 = {
   // Young Women Supported by Transition Guides
   youngWomenTG: { Ghana:5966, Malawi:1837, Tanzania:16306, Zambia:3750, Zimbabwe:5390, Total:33249 },
-  // Young Women Supported by CAMFED in Tertiary Education
+  // Young Women Supported by SHF Agriculture in Tertiary Education
   tertiary:     { Ghana:390,  Malawi:1718, Tanzania:1053,  Zambia:910,  Zimbabwe:719,  Total:4790 }
 };
 
@@ -220,9 +220,9 @@ const L2LR = {
   grantsNum: { Ghana:2427, Malawi:3299, Tanzania:2895, Zambia:2844, Zimbabwe:4330, Total:15795 },
   // Business Grants — Value of Grants (USD)
   grantsVal: { Ghana:1213500, Malawi:1649500, Tanzania:1447500, Zambia:1422000, Zimbabwe:2165000, Total:7897500 },
-  // CAMFED Kiva Loans
+  // SHF Agriculture Kiva Loans
   kiva: { Ghana:693, Malawi:30, Tanzania:12, Zambia:11, Zimbabwe:17, Total:763 },
-  // CAMFED RIF Loans  (763 + 1195 = 1,958 total)
+  // SHF Agriculture RIF Loans  (763 + 1195 = 1,958 total)
   rif:  { Ghana:0,   Malawi:82, Tanzania:510, Zambia:61, Zimbabwe:542, Total:1195 }
 };
 
@@ -256,9 +256,9 @@ const L3 = {
   kpi35Annual:   { girls:2601173, boys:2489319 },
   // Children Benefitting by Gender — Newly supported (Ed Systems 2)
   kpi35Newly:    { girls:780352,  boys:745100, primary:994881, secondary:530571 },
-  // Government districts on top of D.kpi34 CAMFED districts (Ed Systems 1)
+  // Government districts on top of D.kpi34 SHF Agriculture districts (Ed Systems 1)
   districtsGovt: { Ghana:0, Malawi:11, Tanzania:1, Zambia:0, Zimbabwe:0 },
-  // Schools with LG — CAMFED vs Government (Ed Systems 1)
+  // Schools with LG — SHF Agriculture vs Government (Ed Systems 1)
   schoolsCamfed: 4955,
   schoolsGovt:   2582
 };
@@ -840,7 +840,7 @@ function renderLearnerGuideProgrammeCharts() {
   const section = document.getElementById('sublevel-stats-section');
   const a = activeCt();
 
-  // ── LG Training chart data (CAMFED-only bars; total = sum of those bars) ──
+  // ── LG Training chart data (SHF Agriculture-only bars; total = sum of those bars) ──
   const LG = 'Active Learner Guides';
   const lgVals = a.map(c => {
     const t = ddQC(LG, c);
@@ -897,9 +897,9 @@ function renderLearnerGuideProgrammeCharts() {
     </div>`;
 
   setTimeout(() => {
-    // 1. CAMFED Trained — gold vertical bars
+    // 1. SHF Agriculture Trained — gold vertical bars
     erBar('lg-training-chart', a,
-      [{ label: 'CAMFED Trained', data: lgVals, backgroundColor: MAP_LEVEL_COLORS[2] }],
+      [{ label: 'SHF Agriculture Trained', data: lgVals, backgroundColor: MAP_LEVEL_COLORS[2] }],
       { legend: true });
 
     // 2. Girls (deep purple-black) / Boys (dark red) grouped bar
@@ -966,12 +966,12 @@ function renderEducationSystems1Charts() {
 
   setTimeout(() => {
     erBar('l3es1-dist-chart', a, [
-      { label: 'CAMFED Partner', data: camfedDist, backgroundColor: L3_GREEN },
+      { label: 'SHF Agriculture Partner', data: camfedDist, backgroundColor: L3_GREEN },
       { label: 'Government',     data: govtDist,   backgroundColor: MAP_LEVEL_COLORS[4] }
     ], { legend: true, stacked: true, stackLabels: true });
 
     erBar('l3es1-schools-chart',
-      ['CAMFED Supported', 'Government Delivery'],
+      ['SHF Agriculture Supported', 'Government Delivery'],
       [{ data: [L3.schoolsCamfed, L3.schoolsGovt],
          backgroundColor: [L3_GREEN, MAP_LEVEL_COLORS[4]] }]
     );
@@ -1031,7 +1031,7 @@ function renderEducationSystems2Charts() {
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
       <div class="er-card" style="grid-column:1;grid-row:1;">
         <div class="er-card-header">
-          <span class="er-card-title">Number of Memoranda of Understanding between Government Departments and CAMFED</span>
+          <span class="er-card-title">Number of Memoranda of Understanding between Government Departments and SHF Agriculture</span>
           <span class="er-total-badge">Total &nbsp;${fmt(mouTotal)}</span>
         </div>
         <div class="er-chart-wrap"><canvas id="l3es2-mou-chart"></canvas></div>
@@ -1115,7 +1115,7 @@ function renderAgricultureFoodCharts() {
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
       <div class="er-card" style="grid-row:span 2;">
         <div class="er-card-header">
-          <span class="er-card-title">Percentage of Female Entrepreneurs Reporting an Increased Household Consumption of Food Since Participating in CAMFED's Enterprise Programme</span>
+          <span class="er-card-title">Percentage of Female Entrepreneurs Reporting an Increased Household Consumption of Food Since Participating in SHF Agriculture's Enterprise Programme</span>
         </div>
         <div class="er-chart-wrap" style="height:400px;"><canvas id="l2af-food-chart"></canvas></div>
       </div>
@@ -1184,7 +1184,7 @@ function renderJobsIncomeCharts() {
       </div>
       <div class="er-card">
         <div class="er-card-header">
-          <span class="er-card-title">Female Entrepreneurs with Increased Incomes after Participating in CAMFED's Enterprise Programme</span>
+          <span class="er-card-title">Female Entrepreneurs with Increased Incomes after Participating in SHF Agriculture's Enterprise Programme</span>
         </div>
         <div class="er-chart-wrap"><canvas id="l2ji-fe-chart"></canvas></div>
       </div>
@@ -1281,7 +1281,7 @@ function renderLivelihoodsReachCharts() {
       </div>
       <div class="er-card">
         <div class="er-card-header">
-          <span class="er-card-title">CAMFED Kiva &amp; RIF Loans Distributed</span>
+          <span class="er-card-title">SHF Agriculture Kiva &amp; RIF Loans Distributed</span>
           <span class="er-total-badge">Total &nbsp;${fmt(loansTotal)}</span>
         </div>
         <div class="er-chart-wrap"><canvas id="l2lr-loans-chart"></canvas></div>
@@ -1316,8 +1316,8 @@ function renderLivelihoodsReachCharts() {
 
     // 4. Kiva (steel blue) / RIF (dark) grouped
     erBar('l2lr-loans-chart', a, [
-      { label: 'CAMFED Kiva Loans', data: kivaVals, backgroundColor: MAP_LEVEL_COLORS[1] },
-      { label: 'CAMFED RIF Loans',  data: rifVals,  backgroundColor: MAP_LEVEL_COLORS[4] }
+      { label: 'SHF Agriculture Kiva Loans', data: kivaVals, backgroundColor: MAP_LEVEL_COLORS[1] },
+      { label: 'SHF Agriculture RIF Loans',  data: rifVals,  backgroundColor: MAP_LEVEL_COLORS[4] }
     ], { legend: true });
   }, 0);
 
@@ -1343,7 +1343,7 @@ function renderLeadershipTertiaryCharts() {
   const ywTGTotal = ywTGVals.reduce((s, v) => s + v, 0);
 
   // Tertiary Education — live
-  const tertVals  = a.map(c => ddQC('Number of Women Supported by CAMFED in Tertiary Education', c));
+  const tertVals  = a.map(c => ddQC('Number of Women Supported by SHF Agriculture in Tertiary Education', c));
   const tertTotal = tertVals.reduce((s, v) => s + v, 0);
 
   section.innerHTML = `
@@ -1372,7 +1372,7 @@ function renderLeadershipTertiaryCharts() {
       </div>
       <div class="er-card">
         <div class="er-card-header">
-          <span class="er-card-title">Young Women Supported by CAMFED in Tertiary Education</span>
+          <span class="er-card-title">Young Women Supported by SHF Agriculture in Tertiary Education</span>
           <span class="er-total-badge">Total &nbsp;${fmt(tertTotal)}</span>
         </div>
         <div class="er-chart-wrap"><canvas id="l2lt-tert-chart"></canvas></div>
@@ -1554,14 +1554,14 @@ function buildL1() {
   if (single) {
     const lgTotal = ddQC(LG, c);
     const dTotal  = (D.kpi19.camfed[c]||0) + (D.kpi19.govt[c]||0) || 1;
-    bar('l1-lg-chart', ['CAMFED Trained','Govt Trained'], [{
+    bar('l1-lg-chart', ['SHF Agriculture Trained','Govt Trained'], [{
       data:[ddSplit(lgTotal, D.kpi19.camfed[c]||0, dTotal),
             ddSplit(lgTotal, D.kpi19.govt[c]||0,   dTotal)],
       backgroundColor:[MAP_LEVEL_COLORS[4],MAP_LEVEL_COLORS[2]]
     }]);
   } else {
     bar('l1-lg-chart', a, [
-      {label:'CAMFED', data:a.map(n=>{ const t=ddQC(LG,n), d=(D.kpi19.camfed[n]||0)+(D.kpi19.govt[n]||0)||1; return ddSplit(t,D.kpi19.camfed[n]||0,d); }), backgroundColor:MAP_LEVEL_COLORS[4]},
+      {label:'SHF Agriculture', data:a.map(n=>{ const t=ddQC(LG,n), d=(D.kpi19.camfed[n]||0)+(D.kpi19.govt[n]||0)||1; return ddSplit(t,D.kpi19.camfed[n]||0,d); }), backgroundColor:MAP_LEVEL_COLORS[4]},
       {label:'Govt',   data:a.map(n=>{ const t=ddQC(LG,n), d=(D.kpi19.camfed[n]||0)+(D.kpi19.govt[n]||0)||1; return ddSplit(t,D.kpi19.govt[n]||0,d);   }), backgroundColor:MAP_LEVEL_COLORS[2]}
     ], {stacked:true, legend:true});
   }
@@ -1860,7 +1860,7 @@ const checklistData = [
     displayType: { singleYear: 'number', multiYear: 'line' }
   },
   {
-    label: 'Number of Women Supported by CAMFED in Tertiary Education',
+    label: 'Number of Women Supported by SHF Agriculture in Tertiary Education',
     geography: { country: true, district: true, school: false },
     displayType: { singleYear: 'number', multiYear: 'line' }
   },
