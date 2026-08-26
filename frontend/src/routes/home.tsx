@@ -17,7 +17,7 @@ export function HomePage() {
               </p>
             </div>
             <div className="landing-hero-img-wrap">
-              <img src="/images/shf-logo-vertical.jpg" alt="SHF Agriculture" className="landing-hero-img" />
+              <img src="/images/shf-logo-horizontal.jpg" alt="SHF Agriculture" className="landing-hero-img" />
             </div>
           </div>
 
