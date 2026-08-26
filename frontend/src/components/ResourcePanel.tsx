@@ -27,7 +27,7 @@ interface GuideContent { steps: GuideStep[]; tip?: string }
 const GUIDE_CONTENT: Record<GuideTab, GuideContent> = {
   dashboard: {
     steps: [
-      { title: 'Select a Level',           desc: 'Choose a programme area from the Level dropdown — Girls\' Education, Livelihoods & Leadership, or Education Systems.' },
+      { title: 'Select a Level',           desc: 'Choose a programme area from the Level dropdown — SHFs\' Education, Livelihoods & Leadership, or Education Systems.' },
       { title: 'Select a Sub Level',       desc: 'Narrow to a specific focus within your chosen level using the Sub Level dropdown.' },
       { title: 'Choose a Year or Period',  desc: 'Pick an individual year for a snapshot, or a cumulative period (e.g. since 2020) to see totals over time.' },
       { title: 'Select a Country',         desc: 'Filter to one or more countries, or leave as All Countries to view the full picture.' },

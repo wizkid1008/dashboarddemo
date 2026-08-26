@@ -95,11 +95,11 @@ export function sectionHasVisibleCards(subLevel: string, hasPermission: (key: st
 
 export const hierarchyData: HierarchyEntry[] = [
   {
-    level: "LEVEL 1: Girl's Education",
+    level: "LEVEL 1: SHF's Education",
     subLevel: 'Education Reach',
     statistics: [
       {
-        label: '# Girls supported in School with Education Bursaries',
+        label: '# SHFs supported in School with Education Bursaries',
         kpi: 'kpi11.annual.total',
         ddMetric: 'Children Supported in School with Education Bursaries',
         ddMetricCumulative2020: 'Children Supported in School with Education Bursaries — Cumulative 2020-2030',
@@ -107,30 +107,30 @@ export const hierarchyData: HierarchyEntry[] = [
         ddMetricCumulativeAllTime: 'Children Supported in School with Education Bursaries — Cumulative all-time',
       },
       {
-        label: '# Girls Supported in School by CAMA & Community Champions',
+        label: '# SHFs Supported in School by CAMA & Community Champions',
         kpi: 'kpi12.annual.total',
         ddMetric: 'CAMA Members',
       },
-      { label: '# Total Girls Supported', kpi: 'kpi13.annual.girls' },
+      { label: '# Total SHFs Supported', kpi: 'kpi13.annual.girls' },
       { label: '# Total Boys Supported', kpi: 'kpi13.annual.boys' },
     ],
   },
   {
-    level: "LEVEL 1: Girl's Education",
+    level: "LEVEL 1: SHF's Education",
     subLevel: 'Education Outcomes',
     statistics: [
       {
-        label: 'Dropout Rate for Girls with Education Bursaries due to EMP',
+        label: 'Dropout Rate for SHFs with Education Bursaries due to EMP',
         kpi: 'kpi15.pct',
         pct: true,
       },
-      { label: 'Girls with Education Bursaries that Progress to Next Grade' },
-      { label: 'Exam Passrates for Girls with Busaries' },
-      { label: 'School Completion Rates for girls with busaries' },
+      { label: 'SHFs with Education Bursaries that Progress to Next Grade' },
+      { label: 'Exam Passrates for SHFs with Busaries' },
+      { label: 'School Completion Rates for SHFs with busaries' },
     ],
   },
   {
-    level: "LEVEL 1: Girl's Education",
+    level: "LEVEL 1: SHF's Education",
     subLevel: 'Learner Guide Programme',
     statistics: [
       {
@@ -138,7 +138,7 @@ export const hierarchyData: HierarchyEntry[] = [
         kpi: 'kpi19.total',
         ddMetric: 'Active Learner Guides',
       },
-      { label: 'Girls Reporting Increased Agency' },
+      { label: 'SHFs Reporting Increased Agency' },
       { label: 'Learner Guides Reporting Increased Agency' },
       { label: 'Average number of children my better world annually' },
       {
@@ -229,7 +229,7 @@ export const hierarchyData: HierarchyEntry[] = [
         kpiRatio: { n: 'kpi19.govt', d: 'kpi19.total' },
       },
       {
-        label: 'National Level Dropout Rate for Girls due to Early Marriage or Pregnancy',
+        label: 'National Level Dropout Rate for SHFs due to Early Marriage or Pregnancy',
         kpi: 'kpi15.pct',
         pct: true,
       },
@@ -241,7 +241,7 @@ export const hierarchyData: HierarchyEntry[] = [
         label: 'Children Benefiting from Improved Learning Environment',
         kpi: 'kpi35.total',
       },
-      { label: "Number of Active Community Champions for Girls' Education" },
+      { label: "Number of Active Community Champions for SHF's Education" },
     ],
   },
 ]

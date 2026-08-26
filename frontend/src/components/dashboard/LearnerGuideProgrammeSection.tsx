@@ -17,7 +17,7 @@ import {
 
 // LG total active: annual=21, newly=22, cum2030=23, cumall=24, cum2024=122 (kpi 1.9).
 const LG_EL: DashletElementMap = { annual: 21, newly: 22, cum2030: 23, cumall: 24, cum2024: 122 }
-// SLS children (kpi 1.3): girls annual=27, newly=28, cum2030=123; boys annual=29, newly=30, cum2030=124.
+// SLS children (kpi 1.3): SHFs annual=27, newly=28, cum2030=123; boys annual=29, newly=30, cum2030=124.
 // 'Cumulative all-time' exists for kpi 1.3 but only as a combined (non-gender-split) total, which
 // doesn't fit these two per-gender cards -- cumall repeats the annual id there. No 'since 2024'
 // data exists for kpi 1.3 either.
@@ -29,7 +29,7 @@ const TRAINING_SERIES: DashletSeriesSpec[] = [
   { label: 'Gov Trained',    elements: 26, color: MAP_LEVEL_COLORS[3] },
 ]
 const SLS_SERIES: DashletSeriesSpec[] = [
-  { label: 'Girls', elements: SLS_GIRLS_EL, color: MAP_LEVEL_COLORS[0] },
+  { label: 'SHF's, elements: SLS_GIRLS_EL, color: MAP_LEVEL_COLORS[0] },
   { label: 'Boys',  elements: SLS_BOYS_EL,  color: MAP_LEVEL_COLORS[3] },
 ]
 // R3 (element 31) and the MBW divisors feed the stat strip, not a DashletCard.
@@ -85,7 +85,7 @@ export function LearnerGuideProgrammeSection({
     return (avg * 100).toFixed(1) + '%'
   }, [r3Rows, countries])
 
-  // MBW: girls annually (element 27) / LG total annual (element 21) or school count
+  // MBW: SHFs annually (element 27) / LG total annual (element 21) or school count
   const mbwGirlsTotal = useMemo(
     () => sumDashletByCountry(rows, MBW_GIRLS_EL, countries).reduce((s, v) => s + v, 0),
     [rows, countries],
@@ -122,7 +122,7 @@ export function LearnerGuideProgrammeSection({
   return (
     <>
       <div className="lg-stat-strip">
-        <StatCard title="Girls Reporting Increased Agency" value="Data Not Available" />
+        <StatCard title="SHFs Reporting Increased Agency" value="Data Not Available" />
         <StatCard title="Learner Guides Reporting Increased Agency" value={r3Display} />
         <div className="lg-stat-card">
           <div className="lg-stat-title">
@@ -164,8 +164,8 @@ export function LearnerGuideProgrammeSection({
           showUpdateBadge={false}
         />
 
-        {/* Targets stay on the Girls series alone (targetMode's 'first' default), as this
-            card has always done -- there is no combined boys+girls target for KPI 1.3. */}
+        {/* Targets stay on the SHFs series alone (targetMode's 'first' default), as this
+            card has always done -- there is no combined boys+SHFs target for KPI 1.3. */}
         <DashletCard
           {...shared}
           permissionKey="dashlet:learner_guide:children_sls"

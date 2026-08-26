@@ -113,7 +113,7 @@ interface DashletCardProps {
   showTargets?: boolean
   /**
    * Which elements feed the target line. 'first' (default) uses only the first series —
-   * matching cards like Children Receiving SLS, which targets Girls alone. 'all' sums
+   * matching cards like Children Receiving SLS, which targets SHFs alone. 'all' sums
    * across every series, as Enterprise Guides and Schools with Learner Guides do.
    */
   targetMode?: 'first' | 'all'

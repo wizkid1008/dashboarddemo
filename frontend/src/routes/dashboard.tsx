@@ -228,9 +228,9 @@ function DashboardContent() {
   const data = rawDashboardData ?? EMPTY_DASHBOARD_DATA
 
   const levelMeta: Record<string, { title: string; desc: string; img: string; imgPos: string }> = {
-    "LEVEL 1: Girl's Education": {
-      title: "Girls' Education Impact Dashboard",
-      desc: "Track key progress indicators that reflect SHF Agriculture's work in girls' bursary support, Learner Guides and community-based education across the continent.",
+    "LEVEL 1: SHF's Education": {
+      title: "SHF's Education Impact Dashboard",
+      desc: "Track key progress indicators that reflect SHF Agriculture's work in SHF's bursary support, Learner Guides and community-based education across the continent.",
       img: '/images/shf-maize-field.jpg',
       imgPos: 'center 55%',
     },

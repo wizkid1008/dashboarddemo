@@ -76,7 +76,7 @@ export function EducationSystems1Section({ countries, startYear, endYear, period
           value={fmtPct(govtResourcePct)}
         />
         <div className="lg-stat-card">
-          <div className="lg-stat-title">National Level Dropout Rate for Girls due to Early Marriage or Pregnancy</div>
+          <div className="lg-stat-title">National Level Dropout Rate for SHFs due to Early Marriage or Pregnancy</div>
           {dropoutRate != null
             ? <div className="lg-stat-value">{fmtPct(dropoutRate)}</div>
             : <div className="lg-stat-na">Data Not Available</div>}

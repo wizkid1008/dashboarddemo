@@ -12,7 +12,7 @@ export function HomePage() {
               <div className="landing-hero-tag">Impact Overview</div>
               <h2 className="landing-hero-title">SHF Agriculture Impact Dashboard</h2>
               <p className="landing-hero-desc">
-                Explore programme data across girls' education, livelihoods &amp; leadership,
+                Explore programme data across SHF's education, livelihoods &amp; leadership,
                 and education systems — filtered by country, year, and sub-level.
               </p>
             </div>
@@ -36,7 +36,7 @@ export function HomePage() {
                   </svg>
                 </div>
                 <div className="landing-card-label">Data Dashboard</div>
-                <div className="landing-card-title">Girls' Education, Livelihoods &amp; Systems</div>
+                <div className="landing-card-title">SHF's Education, Livelihoods &amp; Systems</div>
                 <div className="landing-card-desc">KPI-level programme data across three impact levels, filterable by country and year.</div>
               </Link>
             )}

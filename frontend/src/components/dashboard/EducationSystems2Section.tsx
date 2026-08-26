@@ -14,7 +14,7 @@ import { DashletCard, collectElements, type DashletSeriesSpec } from '@/componen
 // 77/78/79 = community champion types (CDCs, SBCs, PSGs)
 // 80 = MoU count
 // 81 = children benefitting annual, 85 = children benefitting newly
-// 82-84 = children subcategories annual (Primary girls/boys, Secondary girls/boys)
+// 82-84 = children subcategories annual (Primary SHFs/boys, Secondary SHFs/boys)
 // 86-88 = children subcategories newly
 const MOU_EL = 80
 const CHAMP_ELEMENTS = [77, 78, 79]
@@ -95,7 +95,7 @@ export function EducationSystems2Section({ countries, startYear, endYear, period
         <div className="er-card" style={{ gridColumn: 2, gridRow: '1 / 3', display: 'flex', flexDirection: 'column' }}>
           <div className="er-card-header">
             <span className="er-card-title-row">
-              <span className="er-card-title">Number of Active Community Champions for Girls' Education</span>
+              <span className="er-card-title">Number of Active Community Champions for SHF's Education</span>
               <KpiInfoIcon kpiId="P6" />
               <DashletCommentIcon permissionKey="dashlet:education_systems_2:community_champions" />
             </span>

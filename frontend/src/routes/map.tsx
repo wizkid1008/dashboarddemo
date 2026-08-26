@@ -50,15 +50,15 @@ const YEARS = Array.from({ length: 11 }, (_, i) => 2020 + i)
 // Default is the last year in YEARS; it will be overwritten once real data arrives.
 let currentDataYear = String(YEARS[YEARS.length - 1])
 
-// The map now shows a single KPI: Girls Supported in School with Education Bursaries.
+// The map now shows a single KPI: SHFs Supported in School with Education Bursaries.
 // All other KPIs have been removed — the metric selector is kept in the UI but has
 // only this one option so the map always displays bursary data.
 // The underlying Supabase key (education_bursaries_children) is unchanged; only the
-// display label has been updated from "Children…" to "Girls…" to match CAMFED reporting.
+// display label has been updated from "Children…" to "SHFs…" to match CAMFED reporting.
 // permissionKey retained from the remote branch — it gates visibility via the role system.
 // Keys must match the jsonb_build_object keys in get_district_kpi_data() and get_school_point_data().
 const KPI_DEFINITIONS = [
-  { key: 'education_bursaries_children', label: 'Girls Supported in School with Education Bursaries', permissionKey: 'dd:children_supported' },
+  { key: 'education_bursaries_children', label: 'SHFs Supported in School with Education Bursaries', permissionKey: 'dd:children_supported' },
 ]
 
 const SCHOOL_LEVEL_METRICS = new Set([

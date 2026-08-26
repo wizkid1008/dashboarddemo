@@ -9,9 +9,9 @@ const WAREHOUSE_KEY = import.meta.env.VITE_WAREHOUSE_SUPABASE_KEY as string
 // Populated by uploading kpi-definitions.xlsx through the admin portal.
 export interface DictionaryEntry {
   kpi_id:     string        // source_kpi_id  e.g. "1.1"
-  kpi_name:   string        // indicator      e.g. "Girls Supported with Education Bursaries"
+  kpi_name:   string        // indicator      e.g. "SHFs Supported with Education Bursaries"
   kpi_number: string | null // source_kpi_id  (same value — used for the badge in the tooltip)
-  kpi_group:  string | null // kpi_group      e.g. "Girls' Education"
+  kpi_group:  string | null // kpi_group      e.g. "SHF's Education"
   definition: string | null // definition     free-text definition
 }
 

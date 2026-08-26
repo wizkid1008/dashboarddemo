@@ -41,7 +41,7 @@ const gradeLabels = (country: string) => GRADE_LABELS[country] ?? DEFAULT_GRADE_
  * Rate parser that keeps a real 0 distinct from a non-numeric placeholder -- unlike
  * parseKpiValue, which returns 0 for both. KPI 1.7 values are literally 'Not applicable' /
  * 'Not available' for grades a country doesn't run, and folding those to 0 makes "no such
- * grade" indistinguishable from "no girls progressed".
+ * grade" indistinguishable from "no SHFs progressed".
  */
 function parseRate(raw: string | null | undefined): number | null {
   if (!raw) return null
@@ -128,7 +128,7 @@ export function EducationOutcomesSection({ countries, startYear, endYear }: Sect
   return (
     <div className="er-grid">
       {hasPermission('dashlet:education_outcomes:dropout_rate') && (
-        <ChartCard title="Dropout Rate for Girls with Education Bursaries (EMP)" kpiId="1.5" permissionKey="dashlet:education_outcomes:dropout_rate">
+        <ChartCard title="Dropout Rate for SHFs with Education Bursaries (EMP)" kpiId="1.5" permissionKey="dashlet:education_outcomes:dropout_rate">
           <FlexChart
             labels={countries}
             datasets={[{ label: 'Dropout %', data: dropVals, color: colors }]}

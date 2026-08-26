@@ -1141,7 +1141,7 @@ function MetricConfigForm({
             value={metricName}
             onChange={(e) => setMetricName(e.target.value)}
             required
-            placeholder="e.g. Children Supported — Girls"
+            placeholder="e.g. Children Supported — SHFs"
           />
         </div>
         <div className="roles-form-field">
@@ -1940,7 +1940,7 @@ function CategoryForm({
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            placeholder="e.g. LEVEL 1: Girl's Education"
+            placeholder="e.g. LEVEL 1: SHF's Education"
           />
         </div>
         <div className="roles-form-field">

@@ -12,10 +12,10 @@ export interface DashboardChartEntry {
  */
 export const DASHBOARD_CHART_REGISTRY: DashboardChartEntry[] = [
   // ── Education Reach ───────────────────────────────────────────────────────
-  { kpiId: '1.1',  section: 'Education Reach',         chartName: 'Girls Supported with Education Bursaries' },
-  { kpiId: '1.2a', section: 'Education Reach',         chartName: 'Girls Supported by CAMA' },
-  { kpiId: '1.2b', section: 'Education Reach',         chartName: 'Girls Supported by Community Champions' },
-  { kpiId: 'P1',   section: 'Education Reach',         chartName: 'Total Girls & Boys Supported' },
+  { kpiId: '1.1',  section: 'Education Reach',         chartName: 'SHFs Supported with Education Bursaries' },
+  { kpiId: '1.2a', section: 'Education Reach',         chartName: 'SHFs Supported by CAMA' },
+  { kpiId: '1.2b', section: 'Education Reach',         chartName: 'SHFs Supported by Community Champions' },
+  { kpiId: 'P1',   section: 'Education Reach',         chartName: 'Total SHFs & Boys Supported' },
 
   // ── Education Outcomes ────────────────────────────────────────────────────
   { kpiId: '1.5',  section: 'Education Outcomes',      chartName: 'Dropout Rate',                              valueType: 'percentage' },

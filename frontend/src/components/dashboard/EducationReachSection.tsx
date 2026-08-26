@@ -7,8 +7,8 @@ import type { SectionProps } from '@/components/dashboard/DashboardCards'
 import { DashletCard, collectElements, type DashletElementMap } from '@/components/dashboard/DashletCard'
 
 // Maps burType to dashlet_element for each dashlet group. cum2024 elements 91/92 (Bursaries/CAMA)
-// and cum2030/cumall elements 96-101 (CAMA, Total Girls, Total Boys) are confirmed via
-// view_observed_kpi to have real cumulative data. P1 (Total Girls/Boys) has no 'Cumulative since
+// and cum2030/cumall elements 96-101 (CAMA, Total SHFs, Total Boys) are confirmed via
+// view_observed_kpi to have real cumulative data. P1 (Total SHFs/Boys) has no 'Cumulative since
 // 2024' rows at all, so cum2024 stays mapped to the annual id there ('no-data' via
 // resolveCumulativeElement) -- a genuine data gap, not unwired.
 const BUR_EL:   DashletElementMap = { annual: 1, newly: 2, cum2030: 9,   cumall: 10,  cum2024: 91 }
@@ -40,7 +40,7 @@ export function EducationReachSection({ countries, startYear, endYear, period }:
       <DashletCard
         {...shared}
         permissionKey="dashlet:education_reach:bursaries"
-        title="Girls Supported in School with Education Bursaries"
+        title="SHFs Supported in School with Education Bursaries"
         kpiId="1.1"
         elements={BUR_EL}
         seriesLabel={burLabel}
@@ -59,7 +59,7 @@ export function EducationReachSection({ countries, startYear, endYear, period }:
       <DashletCard
         {...shared}
         permissionKey="dashlet:education_reach:cama_community"
-        title="Girls Supported in School by CAMA & Community Champions"
+        title="SHFs Supported in School by CAMA & Community Champions"
         kpiId="1.2a"
         elements={CAMA_EL}
         agg="series"
@@ -70,10 +70,10 @@ export function EducationReachSection({ countries, startYear, endYear, period }:
       <DashletCard
         {...shared}
         permissionKey="dashlet:education_reach:total_girls"
-        title="Total Girls Supported"
+        title="Total SHFs Supported"
         kpiId="P1"
         elements={GIRLS_EL}
-        seriesLabel="Girls"
+        seriesLabel="SHFs"
         horizontal
       />
 

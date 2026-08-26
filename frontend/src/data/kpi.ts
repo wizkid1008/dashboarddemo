@@ -71,7 +71,7 @@ export const D = {
   },
   kpi13: {
     annual: {
-      girls: {
+      SHFs: {
         Ghana: 141111,
         Malawi: 526109,
         Tanzania: 163417,
