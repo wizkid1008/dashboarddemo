@@ -5,8 +5,8 @@ Wires `dashboarddemo-ekt.pages.dev` to the demo Supabase project
 browsable without a login.
 
 Everything here targets the **demo** project. None of it should ever run
-against the production warehouse (`qlvayqyihfixikfqfelu`) — step 4 in
-particular deliberately opens anonymous read access.
+against the production warehouse (`qlvayqyihfixikfqfelu`) — `sql/04_open_access.sql`
+in particular deliberately opens anonymous read access.
 
 ## Why the demo is empty today
 
@@ -37,20 +37,19 @@ while real RPCs are issued as `anon`.
 
 ## Steps
 
-### 1. Prerequisites
+### 1. Create the schema
 
-This machine has no `node`, `npm`, `supabase`, `psql` or `docker` on PATH, so
-the steps below have to run somewhere that does. Install Node (version in
-`frontend/.nvmrc`) and the CLI:
+287 migrations have to be applied to the empty project. Either route works —
+everything else in this runbook is SQL Editor work regardless.
 
-```bash
-npm i -g supabase
-```
+Neither route has been rehearsed against a fresh project. If a statement fails,
+capture the error rather than skipping past it; a half-applied schema produces
+confusing gaps several steps later.
 
-### 2. Push the schema
-
-From the repo root of the **full** portal repo (the one with `supabase/`, i.e.
-your `master` checkout — not this deploy branch):
+**Route A — CLI (one command, preferred).** Needs Node (version in
+`frontend/.nvmrc`) and `npm i -g supabase`. Run from the root of the **full**
+portal repo — the one with `supabase/`, i.e. your `master` checkout, not this
+deploy branch:
 
 ```bash
 supabase link --project-ref gpyetojuzngrfrtcoycj
@@ -60,17 +59,26 @@ supabase link --project-ref gpyetojuzngrfrtcoycj
 supabase db push
 ```
 
-287 migrations. This has not been rehearsed against a fresh project — if one
-fails, capture the error rather than skipping it; a partially applied schema
-will produce confusing gaps later.
+**Route B — SQL Editor only, no CLI.** `sql/00_schema/` holds the same 287
+migrations concatenated in filename order and split into eight paste-able
+chunks. Run `chunk_01` … `chunk_07` in order, each only after the previous one
+succeeded, then `chunk_08_record_migrations.sql`.
 
-### 3. Expose the schemas to PostgREST
+That last file is not optional if you ever intend to use the CLI on this
+project: pasting SQL bypasses the `supabase_migrations.schema_migrations`
+bookkeeping the CLI keeps, so without it a later `supabase db push` replays all
+287 migrations and fails on the first object that already exists.
+
+The chunks are generated output, not hand-written — regenerate them rather than
+editing them if migrations change.
+
+### 2. Expose the schemas to PostgREST
 
 Supabase dashboard → Project Settings → API → **Exposed schemas**: add
 `rep_portal`, `rep_warehouse`, `rep_raw`. Without this every RPC returns 404
 regardless of grants.
 
-### 4. Seed the data
+### 3. Seed the data
 
 SQL Editor, in order. Each file is re-runnable and each ends with a sanity
 check whose output is worth reading before moving on.
@@ -90,7 +98,7 @@ showing `0` is a card that will still say "No data is available".
 All seeded rows carry `lin_source_system = 'Demo_Seed'` and
 `lin_load_batch_id = 'demo-seed'`.
 
-### 5. Upload the map shapes
+### 4. Upload the map shapes
 
 Storage → create a **public** bucket named `MapShapes`, then upload:
 
@@ -108,7 +116,7 @@ for when the simplified pair is missing; skip them unless the map complains.
 The district names seeded in `01` are the real geoBoundaries `shapeName` values
 from `priority_adm2_v2.geojson`, so the district layer will actually colour in.
 
-### 6. Set the Cloudflare Pages variables
+### 5. Set the Cloudflare Pages variables
 
 Pages project → Settings → Environment variables (Production):
 
@@ -124,7 +132,7 @@ VITE_DEMO_OPEN_ACCESS=true
 Use the **publishable / anon** key (`sb_publishable_...`), never the service
 role key — it would be readable in the shipped bundle.
 
-### 7. Merge and redeploy
+### 6. Merge and redeploy
 
 Saving variables does not rebuild. Merge `demo/connect-supabase` into `main`
 and push; Cloudflare rebuilds on the commit.
@@ -140,8 +148,8 @@ and push; Cloudflare rebuilds on the commit.
 5. Dynamic Data: the metric dropdown is populated and returns rows.
 6. KPI Report / Trends / Milestones: years and indicators are listed.
 
-A 401 on an RPC means step 4's grant list missed it — add the name to
-`v_allow` in `sql/04_open_access.sql` and re-run. A 404 means step 3.
+A 401 on an RPC means step 3's grant list missed it — add the name to
+`v_allow` in `sql/04_open_access.sql` and re-run. A 404 means step 2.
 
 ## Removing the demo data
 
