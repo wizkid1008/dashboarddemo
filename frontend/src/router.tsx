@@ -734,6 +734,8 @@ function RootLayout() {
                 </Link>
               </>
             )}
+            {/* KPI Milestones and KPI Trends hidden on the demo deployment. Routes stay
+                registered and reachable directly.
             {(!permissionsLoaded || hasPermission('page:kpi-milestones')) && (
               <>
                 <span className="top-nav-divider" />
@@ -767,6 +769,7 @@ function RootLayout() {
                 </Link>
               </>
             )}
+            */}
             {/* Hidden for now — pending approval, see conversation 2026-07-18. Route still reachable directly.
             <span className="top-nav-divider" />
             <Link
