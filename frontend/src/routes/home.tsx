@@ -69,6 +69,8 @@ export function HomePage() {
           </div>
 
           <div className="landing-cards landing-cards--row2">
+            {/* KPI Milestones and KPI Trends hidden on the demo deployment. Routes stay
+                registered and reachable directly at /kpi-milestones and /kpi-trends.
             {hasPermission('page:kpi-milestones') && (
               <Link
                 to="/kpi-milestones"
@@ -102,6 +104,7 @@ export function HomePage() {
                 <div className="landing-card-desc">Visualize how KPIs move over time by country and indicator.</div>
               </Link>
             )}
+            */}
             {hasPermission('page:kpi-report') && (
               <Link
                 to="/kpi-report"

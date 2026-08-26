@@ -537,6 +537,8 @@ function RootLayout() {
               Data Map
             </Link>
           )}
+          {/* KPI Milestones and KPI Trends hidden on the demo deployment. Routes stay
+              registered and reachable directly at /kpi-milestones and /kpi-trends.
           {(!permissionsLoaded || hasPermission('page:kpi-milestones')) && (
             <Link
               to="/kpi-milestones"
@@ -566,6 +568,7 @@ function RootLayout() {
               KPI Trends
             </Link>
           )}
+          */}
           {/* Hidden for now — pending approval, see conversation 2026-07-18. Route still reachable directly.
           <Link
             to="/kpi-dashboard"
