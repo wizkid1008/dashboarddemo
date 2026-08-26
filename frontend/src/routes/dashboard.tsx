@@ -231,20 +231,20 @@ function DashboardContent() {
     "LEVEL 1: Girl's Education": {
       title: "Girls' Education Impact Dashboard",
       desc: "Track key progress indicators that reflect SHF Agriculture's work in girls' bursary support, Learner Guides and community-based education across the continent.",
-      img: '/images/camfed-mentor-student.jpg',
-      imgPos: 'center 15%',
+      img: '/images/shf-maize-field.jpg',
+      imgPos: 'center 55%',
     },
     'LEVEL 2: Livelihoods & Leadership': {
       title: 'Livelihoods & Leadership Impact Dashboard',
       desc: "Track key progress indicators that reflect SHF Agriculture's work in economic empowerment, leadership development and systems strengthening across the continent.",
-      img: '/images/camfed-students-running.jpg',
-      imgPos: 'center 10%',
+      img: '/images/shf-coffee-harvest.jpg',
+      imgPos: 'center 50%',
     },
     'LEVEL 3: Education Systems': {
       title: 'Education Reach Impact Dashboard',
       desc: "Track key progress indicators that reflect SHF Agriculture's reach in classroom support, teacher training and learning outcomes across the continent.",
-      img: '/images/camfed-classroom.jpg',
-      imgPos: 'center 60%',
+      img: '/images/shf-rice-terraces.jpg',
+      imgPos: 'center 50%',
     },
   }
 
