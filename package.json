@@ -2,7 +2,7 @@
   "name": "dashboarddemo",
   "private": true,
   "scripts": {
-    "build": "npm --prefix frontend ci && npm --prefix frontend run build && node scripts/copy-frontend-dist.cjs"
+    "build": "npm --prefix frontend ci --ignore-scripts && npm --prefix frontend run build && node scripts/copy-frontend-dist.cjs"
   },
   "engines": {
     "node": ">=20"
