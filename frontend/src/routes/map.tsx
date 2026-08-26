@@ -29,14 +29,17 @@ async function portalRpc(fnName: string) {
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
-const SUPABASE_STORAGE_ADM0_OPTIMIZED_URL =
-  'https://qlvayqyihfixikfqfelu.supabase.co/storage/v1/object/public/MapShapes/africa_adm0_simplified.geojson'
-const SUPABASE_STORAGE_ADM2_OPTIMIZED_URL =
-  'https://qlvayqyihfixikfqfelu.supabase.co/storage/v1/object/public/MapShapes/priority_adm2_v2.geojson'
-const SUPABASE_STORAGE_ADM0_URL =
-  'https://qlvayqyihfixikfqfelu.supabase.co/storage/v1/object/public/MapShapes/geoBoundariesCGAZ_ADM0.geojson'
-const SUPABASE_STORAGE_ADM2_URL =
-  'https://qlvayqyihfixikfqfelu.supabase.co/storage/v1/object/public/MapShapes/geoBoundariesCGAZ_ADM2.geojson'
+// Boundary GeoJSON lives in a public Supabase Storage bucket named MapShapes. The base URL is
+// configurable so a demo deployment can serve shapes from its own project instead of the
+// production warehouse; it falls back to the production bucket when the env var is unset.
+const MAP_SHAPES_BASE_URL =
+  (import.meta.env.VITE_MAP_SHAPES_BASE_URL as string | undefined) ||
+  'https://qlvayqyihfixikfqfelu.supabase.co/storage/v1/object/public/MapShapes'
+
+const SUPABASE_STORAGE_ADM0_OPTIMIZED_URL = `${MAP_SHAPES_BASE_URL}/africa_adm0_simplified.geojson`
+const SUPABASE_STORAGE_ADM2_OPTIMIZED_URL = `${MAP_SHAPES_BASE_URL}/priority_adm2_v2.geojson`
+const SUPABASE_STORAGE_ADM0_URL = `${MAP_SHAPES_BASE_URL}/geoBoundariesCGAZ_ADM0.geojson`
+const SUPABASE_STORAGE_ADM2_URL = `${MAP_SHAPES_BASE_URL}/geoBoundariesCGAZ_ADM2.geojson`
 
 const PRIORITY_COUNTRIES = ['tanzania', 'ghana', 'malawi', 'zambia', 'zimbabwe', 'kenya']
 const YEARS = Array.from({ length: 11 }, (_, i) => 2020 + i)

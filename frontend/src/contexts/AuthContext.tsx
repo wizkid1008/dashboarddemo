@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from 'react'
 import type { Session, User } from '@supabase/supabase-js'
-import { isSupabaseConfigured, supabase } from '@/lib/supabase'
+import { isDemoOpenAccess, isSupabaseConfigured, supabase } from '@/lib/supabase'
 import { fetchMyPermissions, fetchMyCountries } from '@/features/admin/queries'
 
 // Capture before the Supabase SDK clears the hash / query params on client init.
@@ -109,7 +109,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [user?.id, isAdmin, isCountryAdmin])
 
   const hasPermission = useCallback(
-    (key: string) => !isSupabaseConfigured || isAdmin || isCountryAdmin || permissions.includes(key),
+    (key: string) =>
+      !isSupabaseConfigured || isDemoOpenAccess || isAdmin || isCountryAdmin || permissions.includes(key),
     [isAdmin, isCountryAdmin, permissions],
   )
 
