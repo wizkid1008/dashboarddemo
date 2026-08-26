@@ -32,10 +32,6 @@ portal/supabase/.temp/
 portal/supabase/.env
 portal/scripts/.ingest-progress.json
 
-# Production portal code is excluded from this public demo repo.
-portal/
-
-
 # Old production/setup artifacts excluded from the local-only demo
 Map/analysis/
 Map/camfeddashboard-work/
@@ -50,7 +46,7 @@ dashboard/backend/kpi_mapping.sql
 
 # Large/generated binaries not needed for the local-only demo
 Map/*.geojson
-dashboard/nodejs/
-dashboard/**/node.exe
+portal/nodejs/
+portal/**/node.exe
 
-dashboard/backend/package-lock.json
+portal/backend/package-lock.json

@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const rootDir = path.resolve(__dirname, "..");
-const sourceDir = path.join(rootDir, "dashboard");
+const sourceDir = path.join(rootDir, "portal");
 const outputDir = path.join(rootDir, "dist");
 const excludedNames = new Set([
   ".gitignore",
@@ -41,4 +41,4 @@ function copyStaticFiles(source, target) {
 fs.rmSync(outputDir, { recursive: true, force: true });
 copyStaticFiles(sourceDir, outputDir);
 
-console.log(`Built static dashboard into ${path.relative(rootDir, outputDir)}`);
+console.log(`Built static portal into ${path.relative(rootDir, outputDir)}`);

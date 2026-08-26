@@ -1,8 +1,8 @@
 {
-  "name": "dashboarddemo",
+  "name": "portal-demo",
   "version": "1.0.0",
   "private": true,
-  "description": "Static SHF Agriculture dashboard demo for Cloudflare Pages",
+  "description": "Static SHF Agriculture portal demo for Cloudflare Pages",
   "scripts": {
     "build": "node scripts/build-static.js"
   },

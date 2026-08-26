@@ -1708,7 +1708,7 @@ document.getElementById('home-btn').addEventListener('click', () => {
   // Reset hero title and sidebar active state
   const heroTitle = document.getElementById('hero-title');
   const heroDesc  = document.getElementById('hero-desc');
-  if (heroTitle) heroTitle.textContent = 'SHF Agriculture Impact Dashboard';
+  if (heroTitle) heroTitle.textContent = 'SHF Agriculture Impact Portal';
   if (heroDesc)  heroDesc.textContent  = 'Select a level from the filters below to explore programme data by country, year, and sublevel.';
   document.querySelectorAll('.sidebar-nav-item').forEach(i => i.classList.remove('sidebar-nav-item--active'));
 });
