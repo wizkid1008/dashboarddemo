@@ -29,7 +29,7 @@ const TRAINING_SERIES: DashletSeriesSpec[] = [
   { label: 'Gov Trained',    elements: 26, color: MAP_LEVEL_COLORS[3] },
 ]
 const SLS_SERIES: DashletSeriesSpec[] = [
-  { label: 'SHF's, elements: SLS_GIRLS_EL, color: MAP_LEVEL_COLORS[0] },
+  { label: 'SHFs', elements: SLS_GIRLS_EL, color: MAP_LEVEL_COLORS[0] },
   { label: 'Boys',  elements: SLS_BOYS_EL,  color: MAP_LEVEL_COLORS[3] },
 ]
 // R3 (element 31) and the MBW divisors feed the stat strip, not a DashletCard.
