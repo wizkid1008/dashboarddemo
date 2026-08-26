@@ -230,19 +230,19 @@ function DashboardContent() {
   const levelMeta: Record<string, { title: string; desc: string; img: string; imgPos: string }> = {
     "LEVEL 1: Girl's Education": {
       title: "Girls' Education Impact Dashboard",
-      desc: "Track key progress indicators that reflect CAMFED's work in girls' bursary support, Learner Guides and community-based education across the continent.",
+      desc: "Track key progress indicators that reflect SHF Agriculture's work in girls' bursary support, Learner Guides and community-based education across the continent.",
       img: '/images/camfed-mentor-student.jpg',
       imgPos: 'center 15%',
     },
     'LEVEL 2: Livelihoods & Leadership': {
       title: 'Livelihoods & Leadership Impact Dashboard',
-      desc: "Track key progress indicators that reflect CAMFED's work in economic empowerment, leadership development and systems strengthening across the continent.",
+      desc: "Track key progress indicators that reflect SHF Agriculture's work in economic empowerment, leadership development and systems strengthening across the continent.",
       img: '/images/camfed-students-running.jpg',
       imgPos: 'center 10%',
     },
     'LEVEL 3: Education Systems': {
       title: 'Education Reach Impact Dashboard',
-      desc: "Track key progress indicators that reflect CAMFED's reach in classroom support, teacher training and learning outcomes across the continent.",
+      desc: "Track key progress indicators that reflect SHF Agriculture's reach in classroom support, teacher training and learning outcomes across the continent.",
       img: '/images/camfed-classroom.jpg',
       imgPos: 'center 60%',
     },
@@ -431,7 +431,7 @@ function DashboardContent() {
               <div className="content-header-img-wrap">
                 <img
                   src={meta.img}
-                  alt="CAMFED programme"
+                  alt="SHF Agriculture programme"
                   className="content-header-img"
                   style={{ objectPosition: meta.imgPos }}
                 />

@@ -49,7 +49,7 @@ import { AdminReconPage } from '@/routes/admin/recon'
 import { useAuth } from '@/contexts/AuthContext'
 import { DictionaryProvider } from '@/contexts/DictionaryContext'
 import { DashletCommentsProvider } from '@/contexts/DashletCommentsContext'
-import { supabase } from '@/lib/supabase'
+import { isSupabaseConfigured, supabase } from '@/lib/supabase'
 
 type AuthContext = ReturnType<typeof useAuth>
 
@@ -96,6 +96,7 @@ const authRoute = createRoute({
   id: '_auth',
   beforeLoad: ({ context, location }) => {
     if (context.auth.loading) return
+    if (!isSupabaseConfigured) return
     if (!context.auth.session) {
       throw redirect({
         to: '/login',
@@ -469,7 +470,7 @@ function RootLayout() {
     : null
 
   useEffect(() => {
-    if (!trackedPage) return
+    if (!trackedPage || !isSupabaseConfigured) return
     void supabase.schema('rep_portal').rpc('log_page_view', { p_page: trackedPage }).then(({ error }) => {
       if (error) console.error('log_page_view failed', error)
     })

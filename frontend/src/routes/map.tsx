@@ -1465,10 +1465,10 @@ function MapContent() {
               {/* Map panel */}
               <article className="panel panel-map">
                 <div className="panel-heading">
-                  <h2>CAMFED Programme Map</h2>
+                  <h2>SHF Agriculture Programme Map</h2>
                   <span>Leaflet + Supabase</span>
                 </div>
-                <div ref={mapContainerRef} id="map" aria-label="CAMFED programme data map" />
+                <div ref={mapContainerRef} id="map" aria-label="SHF Agriculture programme data map" />
                 <div id="mapEmpty" className="map-empty" hidden>
                   <strong>No boundary data loaded</strong>
                   <span>The GeoJSON file could not be loaded or did not return African boundaries. Check the Supabase Storage URL and refresh the page.</span>

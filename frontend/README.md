@@ -1,6 +1,6 @@
-# CAMFED Dashboard
+# SHF Agriculture Reporting Portal
 
-A data dashboard built for CAMFED, powered by React 19, TypeScript, Vite, TanStack Router, and TanStack Query.
+A data dashboard built for SHF Agriculture, powered by React 19, TypeScript, Vite, TanStack Router, and TanStack Query.
 
 ## Tech Stack
 

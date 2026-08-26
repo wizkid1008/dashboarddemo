@@ -10,14 +10,14 @@ export function HomePage() {
           <div className="landing-hero">
             <div className="landing-hero-text">
               <div className="landing-hero-tag">Impact Overview</div>
-              <h2 className="landing-hero-title">CAMFED Impact Dashboard</h2>
+              <h2 className="landing-hero-title">SHF Agriculture Impact Dashboard</h2>
               <p className="landing-hero-desc">
                 Explore programme data across girls' education, livelihoods &amp; leadership,
                 and education systems — filtered by country, year, and sub-level.
               </p>
             </div>
             <div className="landing-hero-img-wrap">
-              <img src="/images/girls-on-bikes.jpg" alt="CAMFED girls on bikes" className="landing-hero-img" />
+              <img src="/images/shf-logo-vertical.jpg" alt="SHF Agriculture" className="landing-hero-img" />
             </div>
           </div>
 

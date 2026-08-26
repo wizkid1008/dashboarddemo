@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from 'react'
 import type { Session, User } from '@supabase/supabase-js'
-import { supabase } from '@/lib/supabase'
+import { isSupabaseConfigured, supabase } from '@/lib/supabase'
 import { fetchMyPermissions, fetchMyCountries } from '@/features/admin/queries'
 
 // Capture before the Supabase SDK clears the hash / query params on client init.
@@ -42,6 +42,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [countries, setCountries]     = useState<string[]>([])
 
   useEffect(() => {
+    if (!isSupabaseConfigured) {
+      setLoading(false)
+      return
+    }
+
     supabase.auth.getSession().then(({ data }) => {
       setSession(data.session)
       if (isInviteFlow && data.session) {
@@ -104,16 +109,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [user?.id, isAdmin, isCountryAdmin])
 
   const hasPermission = useCallback(
-    (key: string) => isAdmin || isCountryAdmin || permissions.includes(key),
+    (key: string) => !isSupabaseConfigured || isAdmin || isCountryAdmin || permissions.includes(key),
     [isAdmin, isCountryAdmin, permissions],
   )
 
   async function signIn(email: string, password: string) {
+    if (!isSupabaseConfigured) {
+      return { error: new Error('Supabase is not configured for this deployment.') }
+    }
     const { error } = await supabase.auth.signInWithPassword({ email, password })
     return { error: error as Error | null }
   }
 
   async function signInWithGoogle() {
+    if (!isSupabaseConfigured) {
+      return { error: new Error('Supabase is not configured for this deployment.') }
+    }
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: { redirectTo: window.location.origin },
@@ -122,6 +133,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   async function signOut() {
+    if (!isSupabaseConfigured) return
     await supabase.auth.signOut()
   }
 
