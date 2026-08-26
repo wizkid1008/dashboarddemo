@@ -240,12 +240,6 @@ function DashboardContent() {
       img: '/images/shf-coffee-harvest.jpg',
       imgPos: 'center 50%',
     },
-    'LEVEL 3: Education Systems': {
-      title: 'Education Reach Impact Dashboard',
-      desc: "Track key progress indicators that reflect SHF Agriculture's reach in classroom support, teacher training and learning outcomes across the continent.",
-      img: '/images/shf-rice-terraces.jpg',
-      imgPos: 'center 50%',
-    },
   }
 
   const meta = levelMeta[selectedLevel]

@@ -29,11 +29,11 @@ export const DASHBOARD_CHART_REGISTRY: DashboardChartEntry[] = [
   { kpiId: 'R3',   section: 'Learner Guide Programme', chartName: 'Learner Guides Reporting Increased Agency',  valueType: 'percentage' },
 
   // ── Leadership & Tertiary ─────────────────────────────────────────────────
-  { kpiId: '2.2',  section: 'Leadership & Tertiary',   chartName: 'Active Transition Guides' },
-  { kpiId: '2.1',  section: 'Leadership & Tertiary',   chartName: 'CAMA Members' },
-  { kpiId: '2.3',  section: 'Leadership & Tertiary',   chartName: 'Young Women Supported by Transition Guides' },
-  { kpiId: '2.5',  section: 'Leadership & Tertiary',   chartName: 'Women in Tertiary Education' },
-  { kpiId: '2.13', section: 'Leadership & Tertiary',   chartName: 'CAMA Members in Leadership' },
+  { kpiId: '2.2',  section: 'Leadership & Tertiary',   chartName: 'Farmer Guides' },
+  { kpiId: '2.1',  section: 'Leadership & Tertiary',   chartName: 'Support Farmers' },
+  { kpiId: '2.3',  section: 'Leadership & Tertiary',   chartName: 'Youth Supported by Farmer Guides' },
+  { kpiId: '2.5',  section: 'Leadership & Tertiary',   chartName: 'Young Women Supported by Farmer Guides' },
+  { kpiId: '2.13', section: 'Leadership & Tertiary',   chartName: 'Support Farmers in Leadership' },
 
   // ── Livelihoods Reach ─────────────────────────────────────────────────────
   { kpiId: '2.2',  section: 'Livelihoods Reach',       chartName: 'Active Enterprise Guides' },
@@ -42,7 +42,7 @@ export const DASHBOARD_CHART_REGISTRY: DashboardChartEntry[] = [
   { kpiId: '2.8b', section: 'Livelihoods Reach',       chartName: 'Loans' },
 
   // ── Jobs & Income ─────────────────────────────────────────────────────────
-  { kpiId: '2.4',  section: 'Jobs & Income',           chartName: 'Women Progressing to Secure Livelihood',    valueType: 'percentage' },
+  { kpiId: '2.4',  section: 'Jobs & Income',           chartName: 'Women Progressing Towards a Secure Livelihood',    valueType: 'percentage' },
   { kpiId: '2.11', section: 'Jobs & Income',           chartName: 'Female Entrepreneurs with Increased Income', valueType: 'percentage' },
   { kpiId: '2.9',  section: 'Jobs & Income',           chartName: 'Jobs Created' },
   { kpiId: '2.6',  section: 'Jobs & Income',           chartName: 'New Businesses' },

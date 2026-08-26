@@ -10,16 +10,16 @@ import { DashletCard, collectElements, type DashletElementMap } from '@/componen
 //           37=Tertiary annual, 38=Tertiary newly, 39=CAMA leadership, 102-110=cumulative variants
 // (see 20260723020000_wire_remaining_cumulative_dashlets.sql for exact data availability per KPI)
 
-// CAMA Members (2.1) has only one bare 'Cumulative' variant -- reused for both cum2030 and
+// Support Farmers (2.1) has only one bare 'Cumulative' variant -- reused for both cum2030 and
 // cumall since it's the same underlying running total; no cum2024 data exists. No 'newly'
 // key: this card has no Newly-supported variant, so it stays on annual whatever the
 // section toggle says.
 const CAMA_EL:   DashletElementMap = { annual: 32, cum2030: 102, cumall: 103, cum2024: 32 }
-// CAMA Members in Leadership Roles (2.13) has no cumulative data at all -- every variant repeats
+// Support Farmers in Leadership Roles (2.13) has no cumulative data at all -- every variant repeats
 // the annual id so resolveCumulativeElement correctly reports "no real data".
 const LEADER_EL: DashletElementMap = { annual: 39, cum2030: 39, cumall: 39, cum2024: 39 }
 const TG_EL:     DashletElementMap = { annual: 33, newly: 34, cum2030: 104, cumall: 105, cum2024: 106 }
-// Young Women Supported by Transition Guides (2.3) and Young Women in Tertiary Education (2.5)
+// Youth Supported by Farmer Guides (2.3) and Young Women Supported by Farmer Guides (2.5)
 // both have since-2020 + all-time only, no confirmed since-2024 data.
 const YWTG_EL:   DashletElementMap = { annual: 35, newly: 36, cum2030: 107, cumall: 108, cum2024: 35 }
 const TERT_EL:   DashletElementMap = { annual: 37, newly: 38, cum2030: 109, cumall: 110, cum2024: 37 }
@@ -43,7 +43,7 @@ export function LeadershipTertiarySection({ countries, startYear, endYear, perio
         <DashletCard
           {...shared}
           permissionKey="dashlet:leadership_tertiary:transition_guides"
-          title="Active Transition Guides"
+          title="Farmer Guides"
           kpiId="2.2"
           elements={TG_EL}
           seriesLabel="Guides"
@@ -52,7 +52,7 @@ export function LeadershipTertiarySection({ countries, startYear, endYear, perio
         <DashletCard
           {...shared}
           permissionKey="dashlet:leadership_tertiary:cama_members"
-          title="Numbers of CAMA Members"
+          title="Number of Support Farmers"
           kpiId="2.1"
           elements={CAMA_EL}
           seriesLabel="Members"
@@ -61,7 +61,7 @@ export function LeadershipTertiarySection({ countries, startYear, endYear, perio
         <DashletCard
           {...shared}
           permissionKey="dashlet:leadership_tertiary:young_women_tg"
-          title="Young Women Supported by Transition Guides"
+          title="Youth Supported by Farmer Guides"
           kpiId="2.3"
           elements={YWTG_EL}
           seriesLabel="Young Women"
@@ -81,7 +81,7 @@ export function LeadershipTertiarySection({ countries, startYear, endYear, perio
         <DashletCard
           {...shared}
           permissionKey="dashlet:leadership_tertiary:cama_leadership"
-          title="CAMA Members in Leadership Roles"
+          title="Support Farmers in Leadership Roles"
           kpiId="2.13"
           elements={LEADER_EL}
           seriesLabel="Members"

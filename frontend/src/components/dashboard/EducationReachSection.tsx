@@ -59,7 +59,7 @@ export function EducationReachSection({ countries, startYear, endYear, period }:
       <DashletCard
         {...shared}
         permissionKey="dashlet:education_reach:cama_community"
-        title="SHFs Supported in School by CAMA & Community Champions"
+        title="SHFs Supported in School by Support Farmers & Community Champions"
         kpiId="1.2a"
         elements={CAMA_EL}
         agg="series"

@@ -107,9 +107,9 @@ export const hierarchyData: HierarchyEntry[] = [
         ddMetricCumulativeAllTime: 'Children Supported in School with Education Bursaries — Cumulative all-time',
       },
       {
-        label: '# SHFs Supported in School by CAMA & Community Champions',
+        label: '# SHFs Supported in School by Support Farmers & Community Champions',
         kpi: 'kpi12.annual.total',
-        ddMetric: 'CAMA Members',
+        ddMetric: 'Support Farmers',
       },
       { label: '# Total SHFs Supported', kpi: 'kpi13.annual.girls' },
       { label: '# Total Boys Supported', kpi: 'kpi13.annual.boys' },
@@ -157,11 +157,11 @@ export const hierarchyData: HierarchyEntry[] = [
     level: 'LEVEL 2: Livelihoods & Leadership',
     subLevel: 'Leadership & Tertiary',
     statistics: [
-      { label: 'Active Transition Guides', kpi: 'kpi22.transition' },
-      { label: 'Numbers of CAMA Members', kpi: 'kpi21.cum' },
-      { label: 'Young Women Supported by Transition Guide', kpi: 'kpi213.num' },
-      { label: 'Young Women Supported by SHF Agriculture Tertiary Education' },
-      { label: 'CAMA Members in Leadership Roles' },
+      { label: 'Farmer Guides', kpi: 'kpi22.transition' },
+      { label: 'Number of Support Farmers', kpi: 'kpi21.cum' },
+      { label: 'Youth Supported by Farmer Guides', kpi: 'kpi213.num' },
+      { label: 'Young Women Supported by Farmer Guides' },
+      { label: 'Support Farmers in Leadership Roles' },
     ],
   },
   {
@@ -174,14 +174,14 @@ export const hierarchyData: HierarchyEntry[] = [
       },
       { label: 'Business Supported by Enterprise Guides', kpi: 'kpi27.biz' },
       { label: 'Business Grants Distributed' },
-      { label: 'SHF Agriculture KIVA and RIF Loans Distributed' },
+      { label: 'SHF Agriculture Kiva & Loans Distributed' },
     ],
   },
   {
     level: 'LEVEL 2: Livelihoods & Leadership',
     subLevel: 'Jobs & Income',
     statistics: [
-      { label: 'Women Progresing Towards a secure livelihood' },
+      { label: 'Women Progressing Towards a Secure Livelihood' },
       {
         label: "Females Entrepreeurs with increased incomes after participating in SHF Agriculture's ENteprise Programs",
         kpi: 'kpi210.pct',
@@ -208,40 +208,6 @@ export const hierarchyData: HierarchyEntry[] = [
       {
         label: 'Average Number of Climate-Smart Techniques Used by Those Receiieng Support from an Agriculture Guide',
       },
-    ],
-  },
-  {
-    level: 'LEVEL 2: Livelihoods & Leadership',
-    subLevel: 'Life Choices',
-    statistics: [
-      { label: 'Average of Young Women Married by Age 18 Across All Countries' },
-      { label: 'Average of Young Women Giving Birth by Age 18' },
-      { label: 'Percentrage of Young Women in CAMA who Were Married by 18' },
-      { label: 'Percentage of Young Women CAMA Who have Given Birth by 18' },
-    ],
-  },
-  {
-    level: 'LEVEL 3: Education Systems',
-    subLevel: 'Education Systems',
-    statistics: [
-      {
-        label: '% of Resources for Learner Guide Programme Contributed by the Government',
-        kpiRatio: { n: 'kpi19.govt', d: 'kpi19.total' },
-      },
-      {
-        label: 'National Level Dropout Rate for SHFs due to Early Marriage or Pregnancy',
-        kpi: 'kpi15.pct',
-        pct: true,
-      },
-      { label: 'Community Champion Teacher Mentors' },
-      { label: 'Number of Districts with Learner Guides', kpi: 'kpi34.districts' },
-      { label: 'Number of Schools with Learner Guides', kpi: 'kpi31.total_all' },
-      { label: 'Number of Memoranda of Understanding between Government Departments and SHF Agriculture' },
-      {
-        label: 'Children Benefiting from Improved Learning Environment',
-        kpi: 'kpi35.total',
-      },
-      { label: "Number of Active Community Champions for SHF's Education" },
     ],
   },
 ]
