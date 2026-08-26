@@ -22,16 +22,15 @@ const ALL_ELEMENTS = [11, 12, 13, 14, 15, 16, 17, 125, 126, 18, 19]
 const FORM_ELEMENTS = [14, 15, 16, 17, 125, 126] as const
 
 // Display-only renaming of those neutral slots. Position n names Form n+1, and the array length
-// is how many columns that country shows -- Malawi genuinely stops at Form 4, Zambia at Form 5.
+// is how many columns that country shows -- Kenya genuinely stops at Form 4, Zambia at Form 5.
 // A new programme country needs a line here (same pattern as PRIORITY_COUNTRIES in map.tsx);
 // anything unlisted falls back to Form 1-4.
 const GRADE_LABELS: Record<string, string[]> = {
   Ghana:    ['JHS1', 'JHS2', 'JHS3', 'SHS1', 'SHS2', 'SHS3'],
   Tanzania: ['Form 1', 'Form 2', 'Form 3', 'Form 4', 'Form 5', 'Form 6'],
-  Zimbabwe: ['Form 1', 'Form 2', 'Form 3', 'Form 4', 'Form 5', 'Form 6'],
+  Uganda: ['Form 1', 'Form 2', 'Form 3', 'Form 4', 'Form 5', 'Form 6'],
   Zambia:   ['Grade 8 / Form 1', 'Grade 9 / Form 2', 'Grade 10', 'Grade 11', 'Grade 12'],
-  Malawi:   ['Form 1', 'Form 2', 'Form 3', 'Form 4'],
-  Kenya:    ['Form 1', 'Form 2', 'Form 3', 'Form 4'],
+  Kenya:   ['Form 1', 'Form 2', 'Form 3', 'Form 4'],
 }
 const DEFAULT_GRADE_LABELS = ['Form 1', 'Form 2', 'Form 3', 'Form 4']
 
@@ -102,7 +101,7 @@ export function EducationOutcomesSection({ countries, startYear, endYear }: Sect
     [rows, countries],
   )
 
-  // Countries sharing a grade vocabulary share one header row (Tanzania and Zimbabwe are both
+  // Countries sharing a grade vocabulary share one header row (Tanzania and Uganda are both
   // plain Form 1-6), preserving the caller's country order.
   const gradeGroups = useMemo(() => {
     const groups: Array<{ labels: string[]; countries: string[] }> = []

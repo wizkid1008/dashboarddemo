@@ -173,7 +173,7 @@ function RoleForm({
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            placeholder="e.g. Zimbabwe KPI Analyst"
+            placeholder="e.g. Uganda KPI Analyst"
           />
         </div>
         <div className="roles-form-field">

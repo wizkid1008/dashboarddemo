@@ -15,10 +15,9 @@ export const MAP_LEVEL_COLORS = ['#0D4F6C', '#D9A441', '#D8752C', '#1E7896', '#6
 const DASHBOARD_COUNTRY_COLORS: Record<string, string> = {
   Ghana:    '#0D4F6C', // SHF Agriculture Deep Blue
   Kenya:    '#D9A441', // SHF Agriculture Harvest Gold
-  Malawi:   '#D8752C', // SHF Agriculture Warm Orange
   Tanzania: '#1E7896', // SHF Agriculture Sky Blue
   Zambia:   '#6FA641', // SHF Agriculture Leaf Green
-  Zimbabwe: '#243238', // SHF Agriculture Charcoal
+  Uganda: '#243238', // SHF Agriculture Charcoal
 }
 
 // Fallback cycle for any country not in DASHBOARD_COUNTRY_COLORS (e.g. a future programme

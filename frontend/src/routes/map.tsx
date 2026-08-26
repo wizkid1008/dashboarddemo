@@ -41,7 +41,7 @@ const SUPABASE_STORAGE_ADM2_OPTIMIZED_URL = `${MAP_SHAPES_BASE_URL}/priority_adm
 const SUPABASE_STORAGE_ADM0_URL = `${MAP_SHAPES_BASE_URL}/geoBoundariesCGAZ_ADM0.geojson`
 const SUPABASE_STORAGE_ADM2_URL = `${MAP_SHAPES_BASE_URL}/geoBoundariesCGAZ_ADM2.geojson`
 
-const PRIORITY_COUNTRIES = ['tanzania', 'ghana', 'malawi', 'zambia', 'zimbabwe', 'kenya']
+const PRIORITY_COUNTRIES = ['tanzania', 'ghana', 'kenya', 'zambia', 'uganda']
 const YEARS = Array.from({ length: 11 }, (_, i) => 2020 + i)
 
 // currentDataYear holds the most recent year that has actual data values in the loaded
@@ -344,7 +344,7 @@ const sampleDistricts: any[] = [
     geometry:{ type:'Polygon', coordinates:[[[-1.25,9.75],[-0.45,9.75],[-0.45,9.15],[-1.25,9.15],[-1.25,9.75]]] },
   },
   {
-    id:'mw-lilongwe', country_slug:'malawi', country_name:'Malawi', district_name:'Lilongwe',
+    id:'ke-ainabkoi', country_slug:'kenya', country_name:'Kenya', district_name:'Ainabkoi',
     boundary_level:'ADM2', program_count:21, beneficiary_count:16300, risk_score:42,
     kpis:{ education_bursaries_children:15506, active_learner_guides:180, clients_by_form:34049,
            clients_by_form_girls:18600, clients_by_form_boys:15449, active_partner_schools:140,
@@ -360,7 +360,7 @@ const sampleDistricts: any[] = [
     geometry:{ type:'Polygon', coordinates:[[[28.0,-15.15],[28.75,-15.15],[28.75,-15.8],[28.0,-15.8],[28.0,-15.15]]] },
   },
   {
-    id:'zw-harare', country_slug:'zimbabwe', country_name:'Zimbabwe', district_name:'Harare',
+    id:'ug-agago', country_slug:'uganda', country_name:'Uganda', district_name:'Agago',
     boundary_level:'ADM2', program_count:9, beneficiary_count:6900, risk_score:47,
     kpis:{ education_bursaries_children:12966, active_learner_guides:135, clients_by_form:31754,
            clients_by_form_girls:16800, clients_by_form_boys:14954, active_partner_schools:115,

@@ -339,7 +339,7 @@ const DEFINITIONS_RULES = [
 const ALL_KPIS_RULES = [
   { icon: '📄', text: <>File must be <code>.xlsx</code> with a sheet named <strong>All_KPIs</strong></> },
   { icon: '🔢', text: 'Required columns: Year of KPIs, Indicator Group, KPI No, Indicator, Disaggregation1, Disaggregation2, Updated Date, Value Type' },
-  { icon: '🌍', text: 'All country columns present (Ghana, Malawi, Tanzania, Zambia, Zimbabwe, Total) must be populated on every row' },
+  { icon: '🌍', text: 'All country columns present (Ghana, Kenya, Tanzania, Zambia, Uganda, Total) must be populated on every row' },
   { icon: '📅', text: 'All rows must belong to a single year — mixed years in one file are rejected' },
   { icon: '🔁', text: 'Each year can only be uploaded once — re-uploading an existing year is rejected' },
   { icon: '📊', text: 'Disaggregation 2 cannot be filled if Disaggregation 1 is empty' },
