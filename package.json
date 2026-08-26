@@ -1,12 +1,10 @@
 {
-  "name": "portal-demo",
-  "version": "1.0.0",
+  "name": "dashboarddemo",
   "private": true,
-  "description": "Static SHF Agriculture portal demo for Cloudflare Pages",
   "scripts": {
-    "build": "node scripts/build-static.js"
+    "build": "npm --prefix frontend ci && npm --prefix frontend run build && node scripts/copy-frontend-dist.cjs"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }
